@@ -1,11 +1,11 @@
 ---
-title: API Reference
+title: Aliseeks API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - http
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='https://www.aliseeks.com/g/api'>Sign Up for an API Key</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -15,6 +15,7 @@ includes:
   - search
   - item
   - errors
+  - contact
 
 search: true
 ---
