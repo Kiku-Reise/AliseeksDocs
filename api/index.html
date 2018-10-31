@@ -1,0 +1,1056 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="../images/favicon.ico" rel="icon" type="image/ico" />
+    <title>Aliseeks API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="../stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all.js"></script>
+  </head>
+
+  <body class="api api_index" data-languages="[&quot;http&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="../images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="http">http</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#types" class="toc-h1 toc-link" data-title="Types">Types</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#range" class="toc-h2 toc-link" data-title="Range">Range</a>
+                  </li>
+                  <li>
+                    <a href="#currency" class="toc-h2 toc-link" data-title="Currency">Currency</a>
+                  </li>
+                  <li>
+                    <a href="#locale" class="toc-h2 toc-link" data-title="Locale">Locale</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#search-api" class="toc-h1 toc-link" data-title="Search API">Search API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#search-products" class="toc-h2 toc-link" data-title="Search Products">Search Products</a>
+                  </li>
+                  <li>
+                    <a href="#search-products-by-image" class="toc-h2 toc-link" data-title="Search Products By Image">Search Products By Image</a>
+                  </li>
+                  <li>
+                    <a href="#upload-image" class="toc-h2 toc-link" data-title="Upload Image">Upload Image</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#product-api" class="toc-h1 toc-link" data-title="Product API">Product API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-product-details" class="toc-h2 toc-link" data-title="Get Product Details">Get Product Details</a>
+                  </li>
+                  <li>
+                    <a href="#get-product-shipping" class="toc-h2 toc-link" data-title="Get Product Shipping">Get Product Shipping</a>
+                  </li>
+                  <li>
+                    <a href="#get-product-variations" class="toc-h2 toc-link" data-title="Get Product Variations">Get Product Variations</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+          <li>
+            <a href="#contact" class="toc-h1 toc-link" data-title="Contact">Contact</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://www.aliseeks.com/g/api'>Sign Up for an API Key</a></li>
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>The Aliseeks API is a public <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> API. Our API allows retrieval of Aliseeks
+data under different resource URLs and uses HTTP Response Codes to indicate API errors. We support cross-origin resource sharing,
+allowing you to interact securely with our API from a client web application.</p>
+
+<p>Aliseeks API feeds data from has two primary sources.</p>
+
+<ul>
+<li><p>A periodically updated data source called <strong>non real-time data</strong></p></li>
+<li><p>A very frequently updated data source called <strong>real-time data</strong>.</p></li>
+</ul>
+
+<p>Aliseeks API provides AliExpress search, product details with variations, and freight information. You can view request
+and response samples of each API operation. If you encounter any problems using this API, please contact
+our development team at <strong>alex@aliseeks.com</strong> .</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize your requests, append a header X-Api-Client-Id with your API key:</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">X-Api-Client-Id</span><span class="p">:</span> <span class="s">Your API Key</span>
+</code></pre><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">X-Api-Client-Id</span><span class="p">:</span> <span class="s">Your API Key</span>
+<span class="s">{ "anyrequest": "anyrequest" } </span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>Your API Key</code> with your API key available from your dashboard on <a href="https://www.aliseeks.com">Aliseeks</a>.</p>
+</blockquote>
+
+<p>Aliseeks API uses API keys to allow access to our API. You can register for a new API key at our <a href="https://www.aliseeks.com/general/api">developer portal</a>.</p>
+
+<p>Aliseeks expects for the API key to be included in all API requests in a header that look like the following:</p>
+
+<p><code>X-Api-Client-Id: Your Api Key</code></p>
+
+<aside class="notice">
+You must replace <code>Your Api Key</code> with your personal API key.
+</aside>
+<h1 id='types'>Types</h1><h2 id='range'>Range</h2>
+<blockquote>
+<p>Simple range</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Ranges are usually integers but can be doubles</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.5</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>A <code>Range</code> type is used to define a <strong>to</strong> and <strong>from</strong> range.</p>
+
+<p>The fields of the <code>Range</code> type are <strong>to</strong> and <strong>from</strong>.</p>
+
+<p><code>Range</code>s are usually inclusive.</p>
+<h2 id='currency'>Currency</h2>
+<blockquote>
+<p>Example of a currency</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Currency is represented by a currency code <code>string</code>.</p>
+
+<p>Depending on whether you are calling a <strong>realtime</strong> or <strong>non-realtime</strong> endpoint,
+the allowed currency codes will be different.</p>
+<h3 id='supported-realtime-currencies'>Supported Realtime Currencies</h3>
+<p>AUD, BRL, CAD, CHF, CLP, EUR, GBP, IDR, KRW, MXN, NZD, PLN, RUB,
+SEK, SGD, TRY, UAH, USD</p>
+<h3 id='supported-non-realtime-currencies'>Supported non-Realtime Currencies</h3>
+<p>AUD, BRL, CAD, CHF, CLP, CNY, EUR, GBP, IDR, INR, JPY, KRW,
+MXN, NZD, PLN, RUB, SEK, SGD, TRY, UAH, USD</p>
+<h2 id='locale'>Locale</h2>
+<blockquote>
+<p>Example of a locale</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fr_FR"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Locale is represented by a locale <code>string</code>.</p>
+
+<p>Locale&#39;s are used to represent both language code and country code. The first two
+characters of a locale string is the language code and the last two characters
+are the country code.
+<a href="https://www.science.co.il/language/Locale-codes.php">Click here</a> to see a list of locale&#39;s globally.</p>
+
+<p>Only a small subset of the global locales can be used in the Aliseeks API.</p>
+<h3 id='supported-locales'>Supported Locales</h3>
+<p>ar_SA, de_DE, en_US, es_ES, fr_FR, he_IL, ko_KR, pl_PL, pt_BR, ru_RU, tr_TR</p>
+<h1 id='search-api'>Search API</h1><h2 id='search-products'>Search Products</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/search</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s">{</span>
+<span class="s">  "text": "phone charger",</span>
+<span class="s">  "sort": "BEST_MATCH",</span>
+<span class="s">  "currency": "USD",</span>
+<span class="s">  "orderRange": {</span>
+<span class="s">    "from": 50</span>
+<span class="s">  },</span>
+<span class="s">  "ratingsRange": {</span>
+<span class="s">    "from": 4.0,</span>
+<span class="s">    "to": 5.0</span>
+<span class="s">  },</span>
+<span class="s">  "quantityRange": {</span>
+<span class="s">    "from": 0,</span>
+<span class="s">    "to": 1</span>
+<span class="s">  },</span>
+<span class="s">  "priceRange": {</span>
+<span class="s">    "from": 2.00,</span>
+<span class="s">    "to": 50.00</span>
+<span class="s">  },</span>
+<span class="s">  "skip": 0,</span>
+<span class="s">  "limit": 25,</span>
+<span class="s">}</span>
+
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"aggregation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">4947</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"skip"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32818641835"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1PCS Hunting Duck Commander Duck Picker Call Mallard Duck Call"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ae01.alicdn.com/kf/HTB1RxisSXXXXXbaXpXXq6xXFXXXG.jpg_960x960.jpg_.webp"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"detailUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliexpress.com/item/32818641835/32818641835.html"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lotSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lotUnit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"piece"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.990"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"ratings"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"freight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ePacket"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"seller"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"storeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OSPRO FISHING TACKLE &amp; HUNTING CO.,LTD"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"positiveFeedback"</span><span class="p">:</span><span class="w"> </span><span class="mi">13388</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"totalFeedback"</span><span class="p">:</span><span class="w"> </span><span class="mi">14227</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows searching the Aliseeks Product database using a several different criteria. This can be used for 
+product sourcing, finding dropshipping items or dynamically displaying products on a site.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.aliseeks.com/v1/search</code></p>
+<h3 id='body-parameters'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+<th>Allowed Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>empty</td>
+<td>The search text used to search for products by name</td>
+<td></td>
+</tr>
+<tr>
+<td>sort</td>
+<td>string</td>
+<td>BEST_MATCH</td>
+<td>Defines how the matched items should be sorted.</td>
+<td><code>PRODUCT_ID</code>, <code>BEST_MATCH</code>, <code>WHOLESALE_PRICE</code>, <code>ITEM_RATING</code></td>
+</tr>
+<tr>
+<td>sortDirection</td>
+<td>string</td>
+<td>ASC</td>
+<td>Defines the direction that the items should be sorted.</td>
+<td><code>ASC</code>, <code>DESC</code></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>string</td>
+<td>USD</td>
+<td>The currency of the prices in the matched items.</td>
+<td><a href="#currency">See supported non-realtime currencies.</a></td>
+</tr>
+<tr>
+<td>ratingsRange</td>
+<td>Range</td>
+<td>null</td>
+<td>A rating filter to apply to matched items.</td>
+<td></td>
+</tr>
+<tr>
+<td>quantityRange</td>
+<td>Range</td>
+<td>null</td>
+<td>A lot size (sold by quantity) to apply to matched items.</td>
+<td></td>
+</tr>
+<tr>
+<td>priceRange</td>
+<td>Range</td>
+<td>null</td>
+<td>A non-wholesale price filter to apply to matched items.</td>
+<td></td>
+</tr>
+<tr>
+<td>unitPriceRange</td>
+<td>Range</td>
+<td>null</td>
+<td>A wholesale price filter to apply to matched items.</td>
+<td></td>
+</tr>
+<tr>
+<td>orderRange</td>
+<td>Range</td>
+<td>null</td>
+<td>A number of orders filter to apply to matched items.</td>
+<td></td>
+</tr>
+<tr>
+<td>skip</td>
+<td>integer</td>
+<td>0</td>
+<td>The number of matched items to skip</td>
+<td></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>50</td>
+<td>The number of matched items to return</td>
+<td>[5 - 50]</td>
+</tr>
+</tbody></table>
+<h2 id='search-products-by-image'>Search Products By Image</h2>
+<blockquote>
+<p>You can obtain an <code>uploadKey</code> by using the Upload Image API.</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">
+</span><span class="nf">POST</span> <span class="nn">/v1/search/image</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s">{</span>
+<span class="s">  "uploadKey": "abcdefg.jpg",</span>
+<span class="s">  "currency": "USD",</span>
+<span class="s">  "category": 6000</span>
+<span class="s">}</span>
+
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32279008015"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SANYO  New Circular fan modified car electric turbocharger fan 4A 13V 6 * 6.5cm * 7.6cm diameter 9CR0612POJ50"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ae01.alicdn.com/kf/HTB1r1Q3SFXXXXauaXXXq6xXFXXXZ.jpg_350x350.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17.2"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows performing a realtime AliExpress search by image. You will need to
+upload an image using the <a href="#upload-image">Upload Image API</a>.</p>
+
+<aside class="info">
+To obtain an <code>uploadKey</code> you will need to use the <a href="#upload-image">Upload Image API</a> to
+upload an image.
+</aside>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://api.aliseeks.com/v1/search/image</code></p>
+<h3 id='request-parameters'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+<th>Allowed Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>uploadKey</td>
+<td>string</td>
+<td>empty</td>
+<td>The file key provided when an image is uploaded using the <a href="#upload-image">Upload Image API</a></td>
+<td></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>string</td>
+<td>USD</td>
+<td>The currency that prices should be returned</td>
+<td><a href="#currency">See supported realtime currencies.</a></td>
+</tr>
+<tr>
+<td>category</td>
+<td>integer</td>
+<td>null</td>
+<td>The category to search in</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='upload-image'>Upload Image</h2>
+<blockquote>
+<p>This request is not a JSON body, rather it is Form Data. Please check your
+language&#39;s client documentation for more information on how to send multipart form data 
+file requests.</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">
+</span><span class="nf">POST</span> <span class="nn">/v1/search/image</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">multipart/form-data</span>
+<span class="s">{</span>
+<span class="s">  "file": "file-binary-data"</span>
+<span class="s">}</span>
+
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"uploadKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTB8NelmDOaMiuJk43PTq6ySmXXaD.jpg"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows an image to be uploaded which can then be used for
+<a href="#search-products-by-image">Image Search</a>.</p>
+
+<p>There is about a ~15MB size limit on file uploads.</p>
+<h1 id='product-api'>Product API</h1><h2 id='get-product-details'>Get Product Details</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/products/details</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s">{</span>
+<span class="s">    "productId": "32826897725",</span>
+<span class="s">    "currency": "AUD",</span>
+<span class="s">    "locale": "en_US"</span>
+<span class="s">}</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32826897725"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200000346"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sellerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"202046246"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"detailUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliexpress.com/item/32826897725/32826897725.html"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Office Bow Tie Blouse Women Lantern Sleeve White Button Necktie Shirts Female Elegant Work Shirt Casual Tops New 2018 Spring"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"productImages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"https://ae01.alicdn.com/kf/HTB1zBLQHkKWBuNjy1zjq6AOypXaa.jpg_960x960.jpg_.webp"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://ae01.alicdn.com/kf/HTB13mbkl5MnBKNjSZFoq6zOSFXaD.jpg_960x960.jpg_.webp"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://ae01.alicdn.com/kf/HTB1GmYCyZuYBuNkSmRyq6AA3pXaE.jpg_960x960.jpg_.webp"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://ae01.alicdn.com/kf/HTB1VVzqy2iSBuNkSnhJq6zDcpXaB.jpg_960x960.jpg_.webp"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://ae01.alicdn.com/kf/HTB1DjsqHkyWBuNjy0Fpq6yssXXab.jpg_960x960.jpg_.webp"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://ae01.alicdn.com/kf/HTB1u37GHbGYBuNjy0Foq6AiBFXay.jpg_960x960.jpg_.webp"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"promotions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"maxAmount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21.5"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"minAmount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.97"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timeLeft"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"seconds"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"stock"</span><span class="p">:</span><span class="w"> </span><span class="mi">382</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brand Name"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOSSKY"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"201785910"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Material"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polyester,Cotton"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48,47"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clothing Length"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">200000303</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Regular"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200001122"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Style"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">326</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Casual"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200000072"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"maxAmount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23.62"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"maxAmountPerPiece"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23.62"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"minAmount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23.04"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"minAmountPerPiece"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23.04"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"minimumPurchase"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"processingTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"bulkOption"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22.44"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"bulkOrderCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"statusId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"countPerLot"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"wishListCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">7355</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"piece"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"multiUnit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pieces"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"fiveStarCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">140</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fourStarCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"threeStarCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"twoStarCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"oneStarCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"positiveCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">165</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"negativeCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"neutralCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ratings"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.7"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"trade"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"sold"</span><span class="p">:</span><span class="w"> </span><span class="mi">1557</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"skuProperties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"propertyId"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"propertyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Color"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"propertyValueName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sky blue"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueId"</span><span class="p">:</span><span class="w"> </span><span class="mi">173</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueDisplayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"propertyValueName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"White"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueId"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueDisplayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"White"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"propertyId"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"propertyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Size"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"propertyValueName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100014064</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueDisplayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"propertyValueName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueId"</span><span class="p">:</span><span class="w"> </span><span class="mi">361386</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueDisplayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"propertyValueName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueId"</span><span class="p">:</span><span class="w"> </span><span class="mi">361385</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueDisplayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"propertyValueName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XL"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100014065</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueDisplayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XL"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows retrieving <strong>realtime</strong> product information from AliExpress.
+The product information is retrieved by <code>Product ID</code> and can be modified by 
+<code>currency</code> and <code>locale</code>.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+<th>Allowed Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>productId</td>
+<td>string</td>
+<td>empty</td>
+<td>The product ID to retrieve.</td>
+<td></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>string</td>
+<td>USD</td>
+<td>The currency that prices should be returned</td>
+<td><a href="#currency">See supported realtime currencies.</a></td>
+</tr>
+<tr>
+<td>locale</td>
+<td>string</td>
+<td>en_US</td>
+<td>The locale that the product and information should be returned in.</td>
+<td><a href="#locale">See locales</a></td>
+</tr>
+</tbody></table>
+<h2 id='get-product-shipping'>Get Product Shipping</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/products/shipping</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s">{</span>
+<span class="s">    "productId": "32826897725",</span>
+<span class="s">    "country": "US",</span>
+<span class="s">    "quantity": 1</span>
+<span class="s">}</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seller's Shipping Method"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"serviceName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Other"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tracking"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"commitDays"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"deliveryTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AliExpress Standard Shipping"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"serviceName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAINIAO_STANDARD"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tracking"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.84"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"commitDays"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"deliveryTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DHL"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"serviceName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DHL"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tracking"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25.26"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"87"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"commitDays"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"deliveryTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows retrieval of <strong>realtime</strong> product shipping information.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+<th>Allowed Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>productId</td>
+<td>string</td>
+<td>empty</td>
+<td>The product ID to retrieve.</td>
+<td></td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>US</td>
+<td>The country that the product will be shipped to. (See supported ship to countries below)</td>
+<td></td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>integer</td>
+<td>1</td>
+<td>The amount that will be shipped.</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='supported-ship-to-countries'>Supported Ship To Countries</h3>
+<p>AD, AE, AF, AG, AI, AL, ALA, AM,
+AN, AO, AR, AS, ASC, AT, AU, AU,
+AW, AZ, BA, BB, BD, BE, BE, BF, BG,
+BH, BI, BJ, BLM, BM, BN, BO, BQ, BR,
+BR, BS, BT, BW, BY, BZ, CA, CA, CC, CF,
+CG, CH, CI, CK, CL, CL, CM, CO, CR, CV,
+CW, CX, CY, CZ, DE, DE, DJ, DK, DM, DO,
+DZ, EAZ, EC, EE, EG, ER, ES, ES, ET, FI, FJ, FK, FM,
+FO, FR, FR, GA, GBA, GD, GE, GF, GGY, GH, GI, GL, GM, 
+GN, GP, GQ, GR, GT, GU, GW, GY, HK, HN, HR, HT, HU, 
+ID, IE, IL, IL, IN, IQ, IS, IT, IT, JEY, JM, JO, JP, 
+KE, KG, KH, KI, KM, KN, KR, KS, KW, KY, KZ, LA, LB, 
+LC, LI, LK, LR, LS, LT, LU, LV, LY, MA, MAF, MC, MD, 
+MG, MH, MK, ML, MM, MN, MNE, MO, MP, MQ, MR, MS, MT, 
+MU, MV, MW, MX, MY, MZ, NA, NC, NE, NF, NG, NI, NL, 
+NL, NO, NP, NR, NU, NZ, OM, PA, PE, PF, PG, PH, PK, 
+PL, PL, PM, PR, PS, PT, PW, PY, QA, RE, RO, RU, RU, 
+RW, SA, SB, SC, SE, SG, SGS, SI, SK, SL, SM, SN, SO, SR, 
+SRB, SS, ST, SV, SX, SZ, TC, TD, TG, TH, TJ, TLS, TM, 
+TN, TO, TR, TT, TV, TW, TZ, UA, UG, UK, UK, US, US, 
+UY, UZ, VA, VC, VE, VG, VI, VN, VU, WF, WS, YE, YT, 
+ZA, ZM, ZR, ZW </p>
+<h2 id='get-product-variations'>Get Product Variations</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/products/details</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s">{</span>
+<span class="s">    "productId": "32826897725",</span>
+<span class="s">    "currency": "AUD",</span>
+<span class="s">    "locale": "en_US"</span>
+<span class="s">}</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"variations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"propertyIdentifiers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"propertyId"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueId"</span><span class="p">:</span><span class="w"> </span><span class="mi">173</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sky blue"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"propertyId"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueId"</span><span class="p">:</span><span class="w"> </span><span class="mi">361385</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"propertyValueIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mi">173</span><span class="p">,</span><span class="w">
+                </span><span class="mi">361385</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"productId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32826897725"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23.62"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"stock"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"propertyIdentifiers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"propertyId"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueId"</span><span class="p">:</span><span class="w"> </span><span class="mi">173</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sky blue"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"propertyId"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"propertyValueId"</span><span class="p">:</span><span class="w"> </span><span class="mi">361386</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"propertyValueIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mi">173</span><span class="p">,</span><span class="w">
+                </span><span class="mi">361386</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"productId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32826897725"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23.62"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"stock"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint returns stock and pricing for all variations of a particular product.</p>
+
+<p>The property mapping information can be found by cross mapping
+the <a href="#get-product-details">Product Detail</a> response.</p>
+<h1 id='errors'>Errors</h1>
+<blockquote>
+<p>Typical error response (in this case the request is missing productId)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NotNull"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"productId"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"violation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NotNull may not be null"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Anything other than a <strong>200</strong> response status code will indicate an error.</p>
+
+<ul>
+<li>403 - Forbidden access (may not have access to an API)</li>
+<li>422 - Problem with the request body</li>
+<li>500 - Internal server problem (contact us if this persists)</li>
+</ul>
+
+<p>Sometimes, you may get back strange responses with a <strong>200</strong> response. If this is the case,
+please retry your request and let us know if you see persistant problems.</p>
+
+<p>Again our contact is: <strong>alex@aliseeks.com</strong> . This API is not very mature yet
+and things may change or not work properly.</p>
+<h1 id='contact'>Contact</h1>
+<p>Feel free to contact us if you need help, are having problems, or would like to
+make a feature request. This API is very young and relies on our clients to
+help us understand where it needs to improve.</p>
+
+<p>Our contact is <strong>alex@aliseeks.com</strong>. Feel free to drop us an email.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="http">http</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
