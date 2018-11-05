@@ -9,6 +9,7 @@ POST /v1/search HTTP/1.1
   "text": "phone charger",
   "sort": "BEST_MATCH",
   "currency": "USD",
+  "category": 200000147,
   "orderRange": {
     "from": 50
   },
@@ -43,6 +44,7 @@ POST /v1/search HTTP/1.1
     {
         "id": "32818641835",
         "title": "1PCS Hunting Duck Commander Duck Picker Call Mallard Duck Call",
+        "categoryId": 200000147,
         "imageUrl": "https://ae01.alicdn.com/kf/HTB1RxisSXXXXXbaXpXXq6xXFXXXG.jpg_960x960.jpg_.webp",
         "detailUrl": "https://www.aliexpress.com/item/32818641835/32818641835.html",
         "lotSize": 1,
@@ -84,6 +86,7 @@ Parameter | Type | Default | Description | Allowed Values
 text | string | empty | The search text used to search for products by name |
 sort | string | BEST_MATCH | Defines how the matched items should be sorted. | `PRODUCT_ID`, `BEST_MATCH`, `WHOLESALE_PRICE`, `ITEM_RATING`
 sortDirection | string | ASC | Defines the direction that the items should be sorted. | `ASC`, `DESC`
+category | integer | empty | The category of the item |
 currency | string | USD | The currency of the prices in the matched items. | [See supported non-realtime currencies.](#currency)
 ratingsRange | Range | null | A rating filter to apply to matched items. |
 quantityRange | Range | null | A lot size (sold by quantity) to apply to matched items. |
