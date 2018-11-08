@@ -84,7 +84,7 @@ product sourcing, finding dropshipping items or dynamically displaying products 
 Parameter | Type | Default | Description | Allowed Values
 --------- | ---- | ------- | ----------- | --------------
 text | string | empty | The search text used to search for products by name |
-sort | string | BEST_MATCH | Defines how the matched items should be sorted. | `PRODUCT_ID`, `BEST_MATCH`, `WHOLESALE_PRICE`, `ITEM_RATING`
+sort | string | BEST_MATCH | Defines how the matched items should be sorted. | `PRODUCT_ID`, `BEST_MATCH`, `WHOLESALE_PRICE`, `ITEM_RATING`, `ORDERS`
 sortDirection | string | ASC | Defines the direction that the items should be sorted. | `ASC`, `DESC`
 category | integer | empty | The category of the item |
 currency | string | USD | The currency of the prices in the matched items. | [See supported non-realtime currencies.](#currency)

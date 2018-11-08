@@ -208,6 +208,7 @@ POST /v1/products/shipping HTTP/1.1
             },
             "discount": "100",
             "commitDays": 60,
+            "shipFrom": "CN",
             "deliveryTime": {
                 "from": 21,
                 "to": 39
@@ -223,6 +224,7 @@ POST /v1/products/shipping HTTP/1.1
             },
             "discount": "60",
             "commitDays": 60,
+            "shipFrom": "CN",
             "deliveryTime": {
                 "from": 14,
                 "to": 17
@@ -238,6 +240,7 @@ POST /v1/products/shipping HTTP/1.1
             },
             "discount": "87",
             "commitDays": 30,
+            "shipFrom": "CN",
             "deliveryTime": {
                 "from": 7,
                 "to": 14
