@@ -115,6 +115,17 @@ POST /v1/search/image HTTP/1.1
 
 ```json
 {
+  "selectedCategoryId": 3000041,
+  "categories": [
+    {
+      "id": 40001,
+      "name": "Shirts"
+    },
+    {
+      "id": 3000041,
+      "name": "Electronics"
+    }
+  ],
   "items": [
     {
       "id": "32279008015",
@@ -137,6 +148,10 @@ upload an image using the [Upload Image API](#upload-image).
 To obtain an <code>uploadKey</code> you will need to use the <a href="#upload-image">Upload Image API</a> to
 upload an image.
 </aside>
+
+This endpoint will automatically select the most relavent category and provide a list of items that match the Search Image.
+You can invoke this API with any of the returned categories to obtain a list of items that match the Search Image and
+the particular category.
 
 ### HTTP Request
 
