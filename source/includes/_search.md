@@ -77,7 +77,7 @@ product sourcing, finding dropshipping items or dynamically displaying products 
 
 ### HTTP Request
 
-`GET https://api.aliseeks.com/v1/search`
+`POST https://api.aliseeks.com/v1/search`
 
 ### Body Parameters
 
@@ -177,4 +177,41 @@ Content-Type: multipart/form-data
 This endpoint allows an image to be uploaded which can then be used for
 [Image Search](#search-products-by-image).
 
-There is about a ~15MB size limit on file uploads.
+There is about a ~4MB size limit on file uploads, if you have trouble with this limit then please let us know.
+
+## Upload Image With URL
+
+> You can obtain an `uploadKey` by using the Upload Image API.
+
+```http
+
+POST /v1/search/image/upload HTTP/1.1
+{
+  "url": "https://assets.pernod-ricard.com/uk/media_images/test.jpg"
+}
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "uploadKey": "UTB8NelmDOaMiuJk43PTq6ySmXXaD.jpg"
+}
+```
+
+### HTTP Request
+
+`POST https://api.aliseeks.com/v1/search/image/upload`
+
+### Request Parameters
+
+Parameter | Type | Default | Description | Allowed Values
+--------- | ---- | ------- | ----------- | --------------
+url | string | empty | The URL to download an image from | Limited to 4MB
+
+
+This endpoint allows an image to be uploaded which can then be used for
+[Image Search](#search-products-by-image).
+
+There is about a ~4MB size limit on file uploads, if you have trouble with this limit then please let us know.
