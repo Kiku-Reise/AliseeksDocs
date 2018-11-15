@@ -251,6 +251,9 @@
                   <li>
                     <a href="#upload-image" class="toc-h2 toc-link" data-title="Upload Image">Upload Image</a>
                   </li>
+                  <li>
+                    <a href="#upload-image-with-url" class="toc-h2 toc-link" data-title="Upload Image With URL">Upload Image With URL</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -447,7 +450,7 @@ are the country code.
 <p>This endpoint allows searching the Aliseeks Product database using a several different criteria. This can be used for 
 product sourcing, finding dropshipping items or dynamically displaying products on a site.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://api.aliseeks.com/v1/search</code></p>
+<p><code>POST https://api.aliseeks.com/v1/search</code></p>
 <h3 id='body-parameters'>Body Parameters</h3>
 <table><thead>
 <tr>
@@ -560,6 +563,17 @@ product sourcing, finding dropshipping items or dynamically displaying products 
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"selectedCategoryId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3000041</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">40001</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shirts"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3000041</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Electronics"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
   </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32279008015"</span><span class="p">,</span><span class="w">
@@ -581,6 +595,10 @@ upload an image using the <a href="#upload-image">Upload Image API</a>.</p>
 To obtain an <code>uploadKey</code> you will need to use the <a href="#upload-image">Upload Image API</a> to
 upload an image.
 </aside>
+
+<p>This endpoint will automatically select the most relavent category and provide a list of items that match the Search Image.
+You can invoke this API with any of the returned categories to obtain a list of items that match the Search Image and
+the particular category.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST https://api.aliseeks.com/v1/search/image</code></p>
 <h3 id='request-parameters'>Request Parameters</h3>
@@ -639,7 +657,49 @@ file requests.</p>
 <p>This endpoint allows an image to be uploaded which can then be used for
 <a href="#search-products-by-image">Image Search</a>.</p>
 
-<p>There is about a ~15MB size limit on file uploads.</p>
+<p>There is about a ~4MB size limit on file uploads, if you have trouble with this limit then please let us know.</p>
+<h2 id='upload-image-with-url'>Upload Image With URL</h2>
+<blockquote>
+<p>You can obtain an <code>uploadKey</code> by using the Upload Image API.</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">
+</span><span class="nf">POST</span> <span class="nn">/v1/search/image/upload</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s">{</span>
+<span class="s">  "url": "https://assets.pernod-ricard.com/uk/media_images/test.jpg"</span>
+<span class="s">}</span>
+
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"uploadKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTB8NelmDOaMiuJk43PTq6ySmXXaD.jpg"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://api.aliseeks.com/v1/search/image/upload</code></p>
+<h3 id='request-parameters-2'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+<th>Allowed Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>empty</td>
+<td>The URL to download an image from</td>
+<td>Limited to 4MB</td>
+</tr>
+</tbody></table>
+
+<p>This endpoint allows an image to be uploaded which can then be used for
+<a href="#search-products-by-image">Image Search</a>.</p>
+
+<p>There is about a ~4MB size limit on file uploads, if you have trouble with this limit then please let us know.</p>
 <h1 id='product-api'>Product API</h1><h2 id='get-product-details'>Get Product Details</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/products/details</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="s">{</span>
 <span class="s">    "productId": "32826897725",</span>
