@@ -226,20 +226,6 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#types" class="toc-h1 toc-link" data-title="Types">Types</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#range" class="toc-h2 toc-link" data-title="Range">Range</a>
-                  </li>
-                  <li>
-                    <a href="#currency" class="toc-h2 toc-link" data-title="Currency">Currency</a>
-                  </li>
-                  <li>
-                    <a href="#locale" class="toc-h2 toc-link" data-title="Locale">Locale</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#search-api" class="toc-h1 toc-link" data-title="Search API">Search API</a>
               <ul class="toc-list-h2">
                   <li>
@@ -271,10 +257,24 @@
               </ul>
           </li>
           <li>
+            <a href="#types" class="toc-h1 toc-link" data-title="Types">Types</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#range" class="toc-h2 toc-link" data-title="Range">Range</a>
+                  </li>
+                  <li>
+                    <a href="#currency" class="toc-h2 toc-link" data-title="Currency">Currency</a>
+                  </li>
+                  <li>
+                    <a href="#locale" class="toc-h2 toc-link" data-title="Locale">Locale</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
           <li>
-            <a href="#contact" class="toc-h1 toc-link" data-title="Contact">Contact</a>
+            <a href="#support" class="toc-h1 toc-link" data-title="Support">Support</a>
           </li>
       </ul>
         <ul class="toc-footer">
@@ -300,6 +300,8 @@ allowing you to interact securely with our API from a client web application.</p
 <p>Aliseeks API provides AliExpress search, product details with variations, and freight information. You can view request
 and response samples of each API operation. If you encounter any problems using this API, please contact
 our development team at <strong>alex@aliseeks.com</strong> .</p>
+
+<p><img src="../images/slack_16.png" alt="slack" /> <a href="https://join.slack.com/t/aliseeks/shared_invite/enQtNDg3NTQ1OTQ0MjExLWQwOTkyYjIxYjc1NjI0YjMwNTYzMmEyYTViMTlhNjhjOWNlMWIyOTNmNTViYzQzZmQ5YzFiZTgxYjM3OWRkZmM"><strong>Join our Slack channel</strong></a></p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize your requests, append a header X-Api-Client-Id with your API key:</p>
@@ -323,64 +325,6 @@ our development team at <strong>alex@aliseeks.com</strong> .</p>
 <aside class="notice">
 You must replace <code>Your Api Key</code> with your personal API key.
 </aside>
-<h1 id='types'>Types</h1><h2 id='range'>Range</h2>
-<blockquote>
-<p>Simple range</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>Ranges are usually integers but can be doubles</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.5</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>A <code>Range</code> type is used to define a <strong>to</strong> and <strong>from</strong> range.</p>
-
-<p>The fields of the <code>Range</code> type are <strong>to</strong> and <strong>from</strong>.</p>
-
-<p><code>Range</code>s are usually inclusive.</p>
-<h2 id='currency'>Currency</h2>
-<blockquote>
-<p>Example of a currency</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Currency is represented by a currency code <code>string</code>.</p>
-
-<p>Depending on whether you are calling a <strong>realtime</strong> or <strong>non-realtime</strong> endpoint,
-the allowed currency codes will be different.</p>
-<h3 id='supported-realtime-currencies'>Supported Realtime Currencies</h3>
-<p>AUD, BRL, CAD, CHF, CLP, EUR, GBP, IDR, KRW, MXN, NZD, PLN, RUB,
-SEK, SGD, TRY, UAH, USD</p>
-<h3 id='supported-non-realtime-currencies'>Supported non-Realtime Currencies</h3>
-<p>AUD, BRL, CAD, CHF, CLP, CNY, EUR, GBP, IDR, INR, JPY, KRW,
-MXN, NZD, PLN, RUB, SEK, SGD, TRY, UAH, USD</p>
-<h2 id='locale'>Locale</h2>
-<blockquote>
-<p>Example of a locale</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fr_FR"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Locale is represented by a locale <code>string</code>.</p>
-
-<p>Locale&#39;s are used to represent both language code and country code. The first two
-characters of a locale string is the language code and the last two characters
-are the country code.
-<a href="https://www.science.co.il/language/Locale-codes.php">Click here</a> to see a list of locale&#39;s globally.</p>
-
-<p>Only a small subset of the global locales can be used in the Aliseeks API.</p>
-<h3 id='supported-locales'>Supported Locales</h3>
-<p>ar_SA, de_DE, en_US, es_ES, fr_FR, he_IL, ko_KR, pl_PL, pt_BR, ru_RU, tr_TR</p>
 <h1 id='search-api'>Search API</h1><h2 id='search-products'>Search Products</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/search</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="s">{</span>
 <span class="s">  "text": "phone charger",</span>
@@ -1085,6 +1029,64 @@ ZA, ZM, ZR, ZW </p>
 
 <p>The property mapping information can be found by cross mapping
 the <a href="#get-product-details">Product Detail</a> response.</p>
+<h1 id='types'>Types</h1><h2 id='range'>Range</h2>
+<blockquote>
+<p>Simple range</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Ranges are usually integers but can be doubles</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"to"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.5</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>A <code>Range</code> type is used to define a <strong>to</strong> and <strong>from</strong> range.</p>
+
+<p>The fields of the <code>Range</code> type are <strong>to</strong> and <strong>from</strong>.</p>
+
+<p><code>Range</code>s are usually inclusive.</p>
+<h2 id='currency'>Currency</h2>
+<blockquote>
+<p>Example of a currency</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Currency is represented by a currency code <code>string</code>.</p>
+
+<p>Depending on whether you are calling a <strong>realtime</strong> or <strong>non-realtime</strong> endpoint,
+the allowed currency codes will be different.</p>
+<h3 id='supported-realtime-currencies'>Supported Realtime Currencies</h3>
+<p>AUD, BRL, CAD, CHF, CLP, EUR, GBP, IDR, KRW, MXN, NZD, PLN, RUB,
+SEK, SGD, TRY, UAH, USD</p>
+<h3 id='supported-non-realtime-currencies'>Supported non-Realtime Currencies</h3>
+<p>AUD, BRL, CAD, CHF, CLP, CNY, EUR, GBP, IDR, INR, JPY, KRW,
+MXN, NZD, PLN, RUB, SEK, SGD, TRY, UAH, USD</p>
+<h2 id='locale'>Locale</h2>
+<blockquote>
+<p>Example of a locale</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fr_FR"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Locale is represented by a locale <code>string</code>.</p>
+
+<p>Locale&#39;s are used to represent both language code and country code. The first two
+characters of a locale string is the language code and the last two characters
+are the country code.
+<a href="https://www.science.co.il/language/Locale-codes.php">Click here</a> to see a list of locale&#39;s globally.</p>
+
+<p>Only a small subset of the global locales can be used in the Aliseeks API.</p>
+<h3 id='supported-locales'>Supported Locales</h3>
+<p>ar_SA, de_DE, en_US, es_ES, fr_FR, he_IL, ko_KR, pl_PL, pt_BR, ru_RU, tr_TR</p>
 <h1 id='errors'>Errors</h1>
 <blockquote>
 <p>Typical error response (in this case the request is missing productId)</p>
@@ -1102,6 +1104,7 @@ the <a href="#get-product-details">Product Detail</a> response.</p>
 <ul>
 <li>403 - Forbidden access (may not have access to an API)</li>
 <li>422 - Problem with the request body</li>
+<li>429 - Exceeded the allowable call count (upgrade your subscription)</li>
 <li>500 - Internal server problem (contact us if this persists)</li>
 </ul>
 
@@ -1110,7 +1113,9 @@ please retry your request and let us know if you see persistant problems.</p>
 
 <p>Again our contact is: <strong>alex@aliseeks.com</strong> . This API is not very mature yet
 and things may change or not work properly.</p>
-<h1 id='contact'>Contact</h1>
+<h1 id='support'>Support</h1>
+<p><img src="../images/slack_16.png" alt="slack" /> <a href="https://join.slack.com/t/aliseeks/shared_invite/enQtNDg3NTQ1OTQ0MjExLWQwOTkyYjIxYjc1NjI0YjMwNTYzMmEyYTViMTlhNjhjOWNlMWIyOTNmNTViYzQzZmQ5YzFiZTgxYjM3OWRkZmM"><strong>Join our Slack channel</strong></a></p>
+
 <p>Feel free to contact us if you need help, are having problems, or would like to
 make a feature request. This API is very young and relies on our clients to
 help us understand where it needs to improve.</p>
