@@ -13,3 +13,5 @@ Aliseeks API feeds data from has two primary sources.
 Aliseeks API provides AliExpress search, product details with variations, and freight information. You can view request
 and response samples of each API operation. If you encounter any problems using this API, please contact
 our development team at **alex@aliseeks.com** .
+
+![slack](slack_16.png) [**Join our Slack channel**](https://join.slack.com/t/aliseeks/shared_invite/enQtNDg3NTQ1OTQ0MjExLWQwOTkyYjIxYjc1NjI0YjMwNTYzMmEyYTViMTlhNjhjOWNlMWIyOTNmNTViYzQzZmQ5YzFiZTgxYjM3OWRkZmM)

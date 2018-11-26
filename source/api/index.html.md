@@ -11,9 +11,9 @@ toc_footers:
 includes:
   - introduction
   - authentication
-  - types
   - search
   - item
+  - types
   - errors
   - support
 
