@@ -15,7 +15,7 @@ includes:
   - search
   - item
   - errors
-  - contact
+  - support
 
 search: true
 ---
