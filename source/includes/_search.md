@@ -86,7 +86,7 @@ Parameter | Type | Default | Description | Allowed Values
 text | string | empty | The search text used to search for products by name |
 sort | string | BEST_MATCH | Defines how the matched items should be sorted. | `PRODUCT_ID`, `BEST_MATCH`, `WHOLESALE_PRICE`, `ITEM_RATING`, `ORDERS`
 sortDirection | string | ASC | Defines the direction that the items should be sorted. | `ASC`, `DESC`
-category | integer | empty | The category of the item |
+category | integer | empty | The category of the item | [See valid categories](/aliexpress/category)
 currency | string | USD | The currency of the prices in the matched items. | [See supported non-realtime currencies.](#currency)
 ratingsRange | Range | null | A rating filter to apply to matched items. |
 quantityRange | Range | null | A lot size (sold by quantity) to apply to matched items. |
@@ -163,7 +163,7 @@ Parameter | Type | Default | Description | Allowed Values
 --------- | ---- | ------- | ----------- | --------------
 uploadKey | string | empty | The file key provided when an image is uploaded using the [Upload Image API](#upload-image) |
 currency | string | USD | The currency that prices should be returned | [See supported realtime currencies.](#currency)
-category | integer | null | The category to search in
+category | integer | null | The category to search in | [See valid categories](/aliexpress/category)
 
 ## Upload Image
 

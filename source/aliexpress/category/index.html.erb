@@ -1,0 +1,30 @@
+---
+title: Aliexpress Category List
+---
+
+<%= partial(:header, :locals => { :is_white => false })  %>
+
+<div class="is-center-flex">
+  <div class="categories-header">
+    <h1 class="title is-4">List of AliExpress Categories</h1>
+  </div>
+  <div class="categories-sub-header">
+    <p>
+      List of AliExpress categories which can be used when calling or parsing
+      the Aliseeks API.
+    </p>
+  </div>
+  <table class="table is-striped">
+    <thead>
+    <tr>
+      <th>Category ID</th>
+      <th>Name</th>
+      <th>Nested Path</th>
+      <th>Leaf Node</th>
+    </tr>
+    </thead>
+    <tbody>
+      <%= partial "categoriestable" %>
+    </tbody>
+  </table>
+</div>
