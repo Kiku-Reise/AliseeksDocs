@@ -348,6 +348,7 @@ You must replace <code>Your Api Key</code> with your personal API key.
 <span class="s">  },</span>
 <span class="s">  "skip": 0,</span>
 <span class="s">  "limit": 25,</span>
+<span class="s">  "scrollPagination": false</span>
 <span class="s">}</span>
 
 </code></pre>
@@ -358,7 +359,8 @@ You must replace <code>Your Api Key</code> with your personal API key.
   </span><span class="s2">"aggregation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">4947</span><span class="p">,</span><span class="w">
     </span><span class="s2">"skip"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+    </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"scrollIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DnF1ZXJ5VGhlbkZldGNoBQAAAAAAAD"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -393,6 +395,10 @@ You must replace <code>Your Api Key</code> with your personal API key.
 </span></code></pre>
 <p>This endpoint allows searching the Aliseeks Product database using a several different criteria. This can be used for 
 product sourcing, finding dropshipping items or dynamically displaying products on a site.</p>
+
+<p>For deep pagination, set <code>scrollPagination</code> to <code>true</code> and use the <code>scrollIdentifier</code> returned in the <code>aggregation.scrollIdentifier</code> field
+to retrieve the next page of results. Every sub-sequent request will have an <code>aggregation.scrollIdentifier</code>, use the latest returned
+value to retrieve the next page of results.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>POST https://api.aliseeks.com/v1/search</code></p>
 <h3 id='body-parameters'>Body Parameters</h3>
@@ -432,6 +438,13 @@ product sourcing, finding dropshipping items or dynamically displaying products 
 <td>empty</td>
 <td>The category of the item</td>
 <td><a href="/aliexpress/category">See valid categories</a></td>
+</tr>
+<tr>
+<td>includeSubcategories</td>
+<td>boolean</td>
+<td>false</td>
+<td>When this is set to <code>true</code>, we will include all the products in subcategories of <code>category</code></td>
+<td><code>true</code> or <code>false</code></td>
 </tr>
 <tr>
 <td>currency</td>
@@ -480,7 +493,7 @@ product sourcing, finding dropshipping items or dynamically displaying products 
 <td>integer</td>
 <td>0</td>
 <td>The number of matched items to skip</td>
-<td></td>
+<td>[0 - 5000]</td>
 </tr>
 <tr>
 <td>limit</td>
@@ -488,6 +501,20 @@ product sourcing, finding dropshipping items or dynamically displaying products 
 <td>50</td>
 <td>The number of matched items to return</td>
 <td>[5 - 50]</td>
+</tr>
+<tr>
+<td>scrollPagination</td>
+<td>boolean</td>
+<td>false</td>
+<td>Use for deep pagination, set this to true and use the <code>scrollIdentifier</code> returned to retrieve the next page of results</td>
+<td><code>true</code> or <code>false</code></td>
+</tr>
+<tr>
+<td>scrollIdentifier</td>
+<td>string</td>
+<td>empty</td>
+<td>Use for deep pagination, set this to the previously retrieved scroll identifier. This value can change between requests, please use the latest one.</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='search-products-by-image'>Search Products By Image</h2>
@@ -1091,14 +1118,17 @@ are the country code.
 <blockquote>
 <p>Typical error response (in this case the request is missing productId)</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NotNull"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"productId"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"violation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NotNull may not be null"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/search</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">x-error-code</span><span class="p">:</span> <span class="s">NotNull</span>
+<span class="na">x-error-detailed-message</span><span class="p">:</span> <span class="s">NotNull may not be null</span>
+<span class="s">[</span>
+<span class="s">    {</span>
+<span class="s">        "code": "NotNull",</span>
+<span class="s">        "field": "productId",</span>
+<span class="s">        "violation": "NotNull may not be null"</span>
+<span class="s">    }</span>
+<span class="s">]</span>
+</code></pre>
 <p>Anything other than a <strong>200</strong> response status code will indicate an error.</p>
 
 <ul>
@@ -1110,6 +1140,9 @@ are the country code.
 
 <p>Sometimes, you may get back strange responses with a <strong>200</strong> response. If this is the case,
 please retry your request and let us know if you see persistant problems.</p>
+
+<p>Errors can be read from the JSON body response of the API or can be read off of the headers:
+<strong>x-error-code</strong>, <strong>x-error-detailed-message</strong> .</p>
 
 <p>Again our contact is: <strong>alex@aliseeks.com</strong> . This API is not very mature yet
 and things may change or not work properly.</p>
