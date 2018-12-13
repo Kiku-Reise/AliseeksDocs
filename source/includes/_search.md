@@ -27,6 +27,7 @@ POST /v1/search HTTP/1.1
   },
   "skip": 0,
   "limit": 25,
+  "scrollPagination": false
 }
 
 ```
@@ -38,7 +39,8 @@ POST /v1/search HTTP/1.1
   "aggregation": {
     "totalCount": 4947,
     "skip": 0,
-    "limit": 25
+    "limit": 25,
+    "scrollIdentifier": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAAAD"
   },
   "items": [
     {
@@ -75,6 +77,10 @@ POST /v1/search HTTP/1.1
 This endpoint allows searching the Aliseeks Product database using a several different criteria. This can be used for 
 product sourcing, finding dropshipping items or dynamically displaying products on a site.
 
+For deep pagination, set `scrollPagination` to `true` and use the `scrollIdentifier` returned in the `aggregation.scrollIdentifier` field
+to retrieve the next page of results. Every sub-sequent request will have an `aggregation.scrollIdentifier`, use the latest returned
+value to retrieve the next page of results.
+
 ### HTTP Request
 
 `POST https://api.aliseeks.com/v1/search`
@@ -87,14 +93,17 @@ text | string | empty | The search text used to search for products by name |
 sort | string | BEST_MATCH | Defines how the matched items should be sorted. | `PRODUCT_ID`, `BEST_MATCH`, `WHOLESALE_PRICE`, `ITEM_RATING`, `ORDERS`
 sortDirection | string | ASC | Defines the direction that the items should be sorted. | `ASC`, `DESC`
 category | integer | empty | The category of the item | [See valid categories](/aliexpress/category)
+includeSubcategories | boolean | false | When this is set to `true`, we will include all the products in subcategories of `category` | `true` or `false`
 currency | string | USD | The currency of the prices in the matched items. | [See supported non-realtime currencies.](#currency)
 ratingsRange | Range | null | A rating filter to apply to matched items. |
 quantityRange | Range | null | A lot size (sold by quantity) to apply to matched items. |
 priceRange | Range | null | A non-wholesale price filter to apply to matched items. | 
 unitPriceRange | Range | null | A wholesale price filter to apply to matched items. |
 orderRange | Range | null | A number of orders filter to apply to matched items. |
-skip | integer | 0 | The number of matched items to skip |
+skip | integer | 0 | The number of matched items to skip | [0 - 5000]
 limit | integer | 50 | The number of matched items to return | [5 - 50]
+scrollPagination | boolean | false | Use for deep pagination, set this to true and use the `scrollIdentifier` returned to retrieve the next page of results | `true` or `false`
+scrollIdentifier | string | empty | Use for deep pagination, set this to the previously retrieved scroll identifier. This value can change between requests, please use the latest one. |
 
 ## Search Products By Image
 

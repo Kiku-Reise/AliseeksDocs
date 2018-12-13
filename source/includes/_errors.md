@@ -2,7 +2,10 @@
 
 > Typical error response (in this case the request is missing productId)
 
-```json
+```http
+POST /v1/search HTTP/1.1
+x-error-code: NotNull
+x-error-detailed-message: NotNull may not be null
 [
     {
         "code": "NotNull",
@@ -21,6 +24,9 @@ Anything other than a **200** response status code will indicate an error.
 
 Sometimes, you may get back strange responses with a **200** response. If this is the case,
 please retry your request and let us know if you see persistant problems.
+
+Errors can be read from the JSON body response of the API or can be read off of the headers:
+**x-error-code**, **x-error-detailed-message** .
 
 Again our contact is: **alex@aliseeks.com** . This API is not very mature yet
 and things may change or not work properly.
