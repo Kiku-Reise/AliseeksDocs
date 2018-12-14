@@ -1,7 +1,91 @@
 
 # Search API
 
-## Search Products
+## Search Products (Realtime) - Beta
+
+```http
+POST /v1/search/realtime HTTP/1.1
+{
+  "text": "battery backup",
+  "category": "200003482",
+  "priceRange": {
+    "from": 12.50,
+    "to": 30.00
+  },
+  "shipToCountry": "US",
+  "shipFromCountry": "CN",
+  "sort": "BEST_MATCH",
+  "skip": 20
+}
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "aggregation": {
+        "totalCount": 1522577,
+        "shipFromCountries": [
+            "US",
+            "CN"
+        ]
+    },
+    "items": [
+        {
+            "id": "32827273458",
+            "imageUrl": "http://ae01.alicdn.com/kf/HTB1M4ztXUrrK1RkSne1q6ArVVXam.jpg",
+            "title": "KPYTOMOA Boho Vintage Mini Dress Women 2018 Summer Casual",
+            "ratings": 4.6,
+            "orders": 670,
+            "freight": {
+                "price": {
+                    "currency": "USD",
+                    "value": "0"
+                }
+            },
+            "priceOptions": [
+                {
+                    "type": "pc_price",
+                    "amount": {
+                        "currency": "USD",
+                        "value": "12.79"
+                    }
+                },
+                {
+                    "type": "app_price",
+                    "amount": {
+                        "currency": "USD",
+                        "value": "12.59"
+                    }
+                }
+            ]
+        }
+    ]
+}
+```
+
+This endpoint allows searching AliExpress in **realtime** using different criteria. The data retrieved by this
+endpoint is the same that you would get from searching on AliExpress. This can be used for product sourcing,
+finding dropshipping items or dynamically displaying products on a site.
+
+### HTTP Request
+
+`POST https://api.aliseeks.com/v1/search/realtime`
+
+### Body Parameters
+
+Parameter | Type | Default | Description | Allowed Values
+--------- | ---- | ------- | ----------- | --------------
+text | string | empty | The search text used to search for products by name |
+sort | string | BEST_MATCH | Defines how the matched items should be sorted. | `BEST_MATCH`, `HIGHEST_PRICE`, `LOWEST_PRICE`, `NUMBER_OF_ORDERS`, `SELLER_RATING`, `NEWEST_TO_OLDEST`
+category | integer | empty | The category of the item | [See valid categories](/aliexpress/category)
+priceRange | Range | null | A price filter to apply to matched items. |
+shipToCountry | string | empty | The country where the product will be shipped to |
+shipFromCountry | string | empty | The country where the product should ship from |
+skip | integer | 0 | The number of matched items to skip | [0 - 5000]
+
+## Search Products (Non-realtime)
 
 ```http
 POST /v1/search HTTP/1.1
@@ -74,7 +158,7 @@ POST /v1/search HTTP/1.1
 }
 ```
 
-This endpoint allows searching the Aliseeks Product database using a several different criteria. This can be used for 
+This endpoint allows searching the Aliseeks Product database using different criteria. This can be used for 
 product sourcing, finding dropshipping items or dynamically displaying products on a site.
 
 For deep pagination, set `scrollPagination` to `true` and use the `scrollIdentifier` returned in the `aggregation.scrollIdentifier` field
