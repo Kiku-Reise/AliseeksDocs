@@ -229,7 +229,10 @@
             <a href="#search-api" class="toc-h1 toc-link" data-title="Search API">Search API</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#search-products" class="toc-h2 toc-link" data-title="Search Products">Search Products</a>
+                    <a href="#search-products-realtime-beta" class="toc-h2 toc-link" data-title="Search Products (Realtime) - Beta">Search Products (Realtime) - Beta</a>
+                  </li>
+                  <li>
+                    <a href="#search-products-non-realtime" class="toc-h2 toc-link" data-title="Search Products (Non-realtime)">Search Products (Non-realtime)</a>
                   </li>
                   <li>
                     <a href="#search-products-by-image" class="toc-h2 toc-link" data-title="Search Products By Image">Search Products By Image</a>
@@ -325,7 +328,131 @@ our development team at <strong>alex@aliseeks.com</strong> .</p>
 <aside class="notice">
 You must replace <code>Your Api Key</code> with your personal API key.
 </aside>
-<h1 id='search-api'>Search API</h1><h2 id='search-products'>Search Products</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/search</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<h1 id='search-api'>Search API</h1><h2 id='search-products-realtime-beta'>Search Products (Realtime) - Beta</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/search/realtime</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s">{</span>
+<span class="s">  "text": "battery backup",</span>
+<span class="s">  "category": "200003482",</span>
+<span class="s">  "priceRange": {</span>
+<span class="s">    "from": 12.50,</span>
+<span class="s">    "to": 30.00</span>
+<span class="s">  },</span>
+<span class="s">  "shipToCountry": "US",</span>
+<span class="s">  "shipFromCountry": "CN",</span>
+<span class="s">  "sort": "BEST_MATCH",</span>
+<span class="s">  "skip": 20</span>
+<span class="s">}</span>
+
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"aggregation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1522577</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"shipFromCountries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"CN"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32827273458"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ae01.alicdn.com/kf/HTB1M4ztXUrrK1RkSne1q6ArVVXam.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KPYTOMOA Boho Vintage Mini Dress Women 2018 Summer Casual"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ratings"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.6</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="mi">670</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"freight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"priceOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pc_price"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.79"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"app_price"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.59"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows searching AliExpress in <strong>realtime</strong> using different criteria. The data retrieved by this
+endpoint is the same that you would get from searching on AliExpress. This can be used for product sourcing,
+finding dropshipping items or dynamically displaying products on a site.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://api.aliseeks.com/v1/search/realtime</code></p>
+<h3 id='body-parameters'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+<th>Allowed Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>empty</td>
+<td>The search text used to search for products by name</td>
+<td></td>
+</tr>
+<tr>
+<td>sort</td>
+<td>string</td>
+<td>BEST_MATCH</td>
+<td>Defines how the matched items should be sorted.</td>
+<td><code>BEST_MATCH</code>, <code>HIGHEST_PRICE</code>, <code>LOWEST_PRICE</code>, <code>NUMBER_OF_ORDERS</code>, <code>SELLER_RATING</code>, <code>NEWEST_TO_OLDEST</code></td>
+</tr>
+<tr>
+<td>category</td>
+<td>integer</td>
+<td>empty</td>
+<td>The category of the item</td>
+<td><a href="/aliexpress/category">See valid categories</a></td>
+</tr>
+<tr>
+<td>priceRange</td>
+<td>Range</td>
+<td>null</td>
+<td>A price filter to apply to matched items.</td>
+<td></td>
+</tr>
+<tr>
+<td>shipToCountry</td>
+<td>string</td>
+<td>empty</td>
+<td>The country where the product will be shipped to</td>
+<td></td>
+</tr>
+<tr>
+<td>shipFromCountry</td>
+<td>string</td>
+<td>empty</td>
+<td>The country where the product should ship from</td>
+<td></td>
+</tr>
+<tr>
+<td>skip</td>
+<td>integer</td>
+<td>0</td>
+<td>The number of matched items to skip</td>
+<td>[0 - 5000]</td>
+</tr>
+</tbody></table>
+<h2 id='search-products-non-realtime'>Search Products (Non-realtime)</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/search</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="s">{</span>
 <span class="s">  "text": "phone charger",</span>
 <span class="s">  "sort": "BEST_MATCH",</span>
@@ -393,15 +520,15 @@ You must replace <code>Your Api Key</code> with your personal API key.
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint allows searching the Aliseeks Product database using a several different criteria. This can be used for 
+<p>This endpoint allows searching the Aliseeks Product database using different criteria. This can be used for 
 product sourcing, finding dropshipping items or dynamically displaying products on a site.</p>
 
 <p>For deep pagination, set <code>scrollPagination</code> to <code>true</code> and use the <code>scrollIdentifier</code> returned in the <code>aggregation.scrollIdentifier</code> field
 to retrieve the next page of results. Every sub-sequent request will have an <code>aggregation.scrollIdentifier</code>, use the latest returned
 value to retrieve the next page of results.</p>
-<h3 id='http-request'>HTTP Request</h3>
+<h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST https://api.aliseeks.com/v1/search</code></p>
-<h3 id='body-parameters'>Body Parameters</h3>
+<h3 id='body-parameters-2'>Body Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -570,7 +697,7 @@ upload an image.
 <p>This endpoint will automatically select the most relavent category and provide a list of items that match the Search Image.
 You can invoke this API with any of the returned categories to obtain a list of items that match the Search Image and
 the particular category.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST https://api.aliseeks.com/v1/search/image</code></p>
 <h3 id='request-parameters'>Request Parameters</h3>
 <table><thead>
@@ -646,7 +773,7 @@ file requests.</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"uploadKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTB8NelmDOaMiuJk43PTq6ySmXXaD.jpg"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
 <p><code>POST https://api.aliseeks.com/v1/search/image/upload</code></p>
 <h3 id='request-parameters-2'>Request Parameters</h3>
 <table><thead>
