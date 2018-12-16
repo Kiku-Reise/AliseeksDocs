@@ -4,15 +4,15 @@ The Aliseeks API is a public [REST](https://en.wikipedia.org/wiki/Representation
 data under different resource URLs and uses HTTP Response Codes to indicate API errors. We support cross-origin resource sharing,
 allowing you to interact securely with our API from a client web application.
 
-Aliseeks API feeds data from has two primary sources.
+Aliseeks API allows interaction with two data sources.
 
-* A periodically updated data source called **non real-time data**
+* **Real-Time Data** - Direct request to AliExpress to retrieve live data.
 
-* A very frequently updated data source called **real-time data**.
+* **Non Real-Time Data** - Comes from Aliseek's periodically updated data source.
 
 Aliseeks API provides AliExpress search, product details with variations, and freight information. You can view request
 and response samples of each API operation. If you encounter any problems using this API, please contact
-our development team at **alex@aliseeks.com** .
+our development team at **alex@aliseeks.com** or through our Slack channel .
 
 Check out live status of the API by visiting our [**public API status dashboard**](https://status.aliseeks.com/d/yYBGQYEiz/aliseeks-api-status?refresh=10s&orgId=2&kiosk=1).
 
