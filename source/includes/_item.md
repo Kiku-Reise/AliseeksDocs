@@ -286,7 +286,7 @@ ZA, ZM, ZR, ZW
 ## Get Product Variations
 
 ```http
-POST /v1/products/details HTTP/1.1
+POST /v1/products/variations HTTP/1.1
 {
 	"productId": "32826897725",
 	"currency": "AUD",
