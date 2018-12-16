@@ -354,4 +354,9 @@ This endpoint returns stock and pricing for all variations of a particular produ
 The property mapping information can be found by cross mapping
 the [Product Detail](#get-product-details) response.
 
+Parameter | Type | Default | Description | Allowed Values
+--------- | ---- | ------- | ----------- | --------------
+productId | string | empty | The product ID to retrieve. |
+country | string | US | The country that the product will be shipped to. (See supported ship to countries below) |
+quantity | integer | 1 | The amount that will be shipped. |
 
