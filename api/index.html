@@ -282,7 +282,9 @@
       </ul>
         <ul class="toc-footer">
             <li><a href='https://www.aliseeks.com/g/api'>Sign Up for an API Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://status.aliseeks.com/d/yYBGQYEiz/aliseeks-api-status?refresh=10s&orgId=2&kiosk=1'>API Status Dashboard</a></li>
+            <li><a href='https://join.slack.com/t/aliseeks/shared_invite/enQtNDg3NTQ1OTQ0MjExLWQwOTkyYjIxYjc1NjI0YjMwNTYzMmEyYTViMTlhNjhjOWNlMWIyOTNmNTViYzQzZmQ5YzFiZTgxYjM3OWRkZmM'>Join our Slack Channel</a></li>
+            <li><a href='https://github.com/wakawaka54/AliseeksDocs'>Contribute To The Docs</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -303,6 +305,8 @@ allowing you to interact securely with our API from a client web application.</p
 <p>Aliseeks API provides AliExpress search, product details with variations, and freight information. You can view request
 and response samples of each API operation. If you encounter any problems using this API, please contact
 our development team at <strong>alex@aliseeks.com</strong> .</p>
+
+<p>Check out live status of the API by visiting our <a href="https://status.aliseeks.com/d/yYBGQYEiz/aliseeks-api-status?refresh=10s&amp;orgId=2&amp;kiosk=1"><strong>public API status dashboard</strong></a>.</p>
 
 <p><img src="../images/slack_16.png" alt="slack" /> <a href="https://join.slack.com/t/aliseeks/shared_invite/enQtNDg3NTQ1OTQ0MjExLWQwOTkyYjIxYjc1NjI0YjMwNTYzMmEyYTViMTlhNjhjOWNlMWIyOTNmNTViYzQzZmQ5YzFiZTgxYjM3OWRkZmM"><strong>Join our Slack channel</strong></a></p>
 <h1 id='authentication'>Authentication</h1>
@@ -1118,7 +1122,7 @@ SRB, SS, ST, SV, SX, SZ, TC, TD, TG, TH, TJ, TLS, TM,
 TN, TO, TR, TT, TV, TW, TZ, UA, UG, UK, UK, US, US, 
 UY, UZ, VA, VC, VE, VG, VI, VN, VU, WF, WS, YE, YT, 
 ZA, ZM, ZR, ZW </p>
-<h2 id='get-product-variations'>Get Product Variations</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/products/details</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<h2 id='get-product-variations'>Get Product Variations</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/products/variations</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="s">{</span>
 <span class="s">    "productId": "32826897725",</span>
 <span class="s">    "currency": "AUD",</span>
@@ -1183,6 +1187,38 @@ ZA, ZM, ZR, ZW </p>
 
 <p>The property mapping information can be found by cross mapping
 the <a href="#get-product-details">Product Detail</a> response.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+<th>Allowed Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>productId</td>
+<td>string</td>
+<td>empty</td>
+<td>The product ID to retrieve.</td>
+<td></td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>US</td>
+<td>The country that the product will be shipped to. (See supported ship to countries below)</td>
+<td></td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>integer</td>
+<td>1</td>
+<td>The amount that will be shipped.</td>
+<td></td>
+</tr>
+</tbody></table>
 <h1 id='types'>Types</h1><h2 id='range'>Range</h2>
 <blockquote>
 <p>Simple range</p>
@@ -1279,6 +1315,8 @@ and things may change or not work properly.</p>
 <p>Feel free to contact us if you need help, are having problems, or would like to
 make a feature request. This API is very young and relies on our clients to
 help us understand where it needs to improve.</p>
+
+<p>Find out about API level issues or alerts by visiting our <a href="https://status.aliseeks.com/d/yYBGQYEiz/aliseeks-api-status?refresh=10s&amp;orgId=2&amp;kiosk=1"><strong>live status dashboard</strong></a>.</p>
 
 <p>Our contact is <strong>alex@aliseeks.com</strong>. Feel free to drop us an email.</p>
 
