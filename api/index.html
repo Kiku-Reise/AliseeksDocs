@@ -257,6 +257,9 @@
                   <li>
                     <a href="#get-product-variations" class="toc-h2 toc-link" data-title="Get Product Variations">Get Product Variations</a>
                   </li>
+                  <li>
+                    <a href="#get-product-html-description" class="toc-h2 toc-link" data-title="Get Product HTML Description">Get Product HTML Description</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1216,6 +1219,40 @@ the <a href="#get-product-details">Product Detail</a> response.</p>
 <td>integer</td>
 <td>1</td>
 <td>The amount that will be shipped.</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='get-product-html-description'>Get Product HTML Description</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/products/description/html</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s">{</span>
+<span class="s">    "productId": "32826897725"</span>
+<span class="s">}</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;kse:widget data-widget-type=</span><span class="se">\"</span><span class="s2">relatedProduct</span><span class="se">\"</span><span class="s2"> id=</span><span class="se">\"</span><span class="s2">34324485</span><span class="se">\"</span><span class="s2"> title=</span><span class="se">\"</span><span class="s2">Dress</span><span class="se">\"</span><span class="s2"> type=</span><span class="se">\"</span><span class="s2">relation</span><span class="se">\"</span><span class="s2">&gt;&lt;/kse:widget&gt; &lt;h1 style=</span><span class="se">\"</span><span class="s2">text-align: center;</span><span class="se">\"</span><span class="s2">&gt; Hot Summer beach Dress Sexy Women Casual Sleeveless Beach Short Dress Tassel Solid White Mini Lace Dress Plus Size Drop Shipping &lt;/h1&gt; &lt;p align=</span><span class="se">\"</span><span class="s2">left</span><span class="se">\"</span><span class="s2">&gt; &lt;span style=</span><span class="se">\"</span><span class="s2">font-family:Arial;font-size:large;</span><span class="se">\"</span><span class="s2">&gt;&lt;b&gt;&lt;span style=</span><span class="se">\"</span><span class="s2">font-style:italic;background-color:#FF6699;</span><span class="se">\"</span><span class="s2">&gt;Item specifics&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/p&gt; &lt;ul&gt;  &lt;li&gt; &lt;p align=</span><span class="se">\"</span><span class="s2">left</span><span class="se">\"</span><span class="s2"> style=</span><span class="se">\"</span><span class="s2">margin:10px;</span><span class="se">\"</span><span class="s2">&gt; &lt;span style=</span><span class="se">\"</span><span class="s2">font-size:11pt;background-color:#FFFFFF;font-family:Arial;</span><span class="se">\"</span><span class="s2">&gt;Gender:Women&lt;/span&gt; &lt;/p&gt; &lt;/li&gt;  &lt;li&gt; &lt;p align=</span><span class="se">\"</span><span class="s2">left</span><span class="se">\"</span><span class="s2"> style=</span><span class="se">\"</span><span class="s2">margin:10px;</span><span class="se">\"</span><span class="s2">&gt;"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint returns the HTML product description as seen on the AliExpress.</p>
+
+<p>The description will be returned in HTML which means that there can be embedded images and
+HTML formatting.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+<th>Allowed Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>productId</td>
+<td>string</td>
+<td>null</td>
+<td>The product ID to retrieve.</td>
 <td></td>
 </tr>
 </tbody></table>
