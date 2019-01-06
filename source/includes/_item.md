@@ -360,3 +360,28 @@ productId | string | empty | The product ID to retrieve. |
 country | string | US | The country that the product will be shipped to. (See supported ship to countries below) |
 quantity | integer | 1 | The amount that will be shipped. |
 
+## Get Product HTML Description
+
+```http
+POST /v1/products/description/html HTTP/1.1
+{
+	"productId": "32826897725"
+}
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "description": "<kse:widget data-widget-type=\"relatedProduct\" id=\"34324485\" title=\"Dress\" type=\"relation\"></kse:widget> <h1 style=\"text-align: center;\"> Hot Summer beach Dress Sexy Women Casual Sleeveless Beach Short Dress Tassel Solid White Mini Lace Dress Plus Size Drop Shipping </h1> <p align=\"left\"> <span style=\"font-family:Arial;font-size:large;\"><b><span style=\"font-style:italic;background-color:#FF6699;\">Item specifics</span></b></span></p> <ul>  <li> <p align=\"left\" style=\"margin:10px;\"> <span style=\"font-size:11pt;background-color:#FFFFFF;font-family:Arial;\">Gender:Women</span> </p> </li>  <li> <p align=\"left\" style=\"margin:10px;\">"
+}
+```
+
+This endpoint returns the HTML product description as seen on the AliExpress.
+
+The description will be returned in HTML which means that there can be embedded images and
+HTML formatting.
+
+Parameter | Type | Default | Description | Allowed Values
+--------- | ---- | ------- | ----------- | --------------
+productId | string | null | The product ID to retrieve. |
