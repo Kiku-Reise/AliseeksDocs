@@ -4,6 +4,8 @@ The Aliseeks API is a public [REST](https://en.wikipedia.org/wiki/Representation
 data under different resource URLs and uses HTTP Response Codes to indicate API errors. We support cross-origin resource sharing,
 allowing you to interact securely with our API from a client web application.
 
+**[Get started quickly by using our Postman Collection!](https://documenter.getpostman.com/view/3150332/RznFqeQE)**
+
 Aliseeks API allows interaction with two data sources.
 
 * **Real-Time Data** - Direct request to AliExpress to retrieve live data.
