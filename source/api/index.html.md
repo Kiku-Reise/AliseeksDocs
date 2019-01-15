@@ -12,6 +12,7 @@ toc_footers:
 
 includes:
   - introduction
+  - gettingstarted
   - authentication
   - search
   - item

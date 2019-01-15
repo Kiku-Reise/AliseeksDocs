@@ -1,7 +1,7 @@
 
 # Search API
 
-## Search Products (Realtime) - Beta
+## Search Products (Realtime)
 
 ```http
 POST /v1/search/realtime HTTP/1.1
