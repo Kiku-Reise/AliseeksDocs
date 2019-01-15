@@ -4,7 +4,7 @@
 contact us through [Slack](https://join.slack.com/t/aliseeks/shared_invite/enQtNDg3NTQ1OTQ0MjExLWQwOTkyYjIxYjc1NjI0YjMwNTYzMmEyYTViMTlhNjhjOWNlMWIyOTNmNTViYzQzZmQ5YzFiZTgxYjM3OWRkZmM).
 
 🔧 For non-operational issues, feature suggestions, improvements
-[submit an issue](https://gitlab.com/wakawaka54/aliseeks/issues/new)
+[submit an issue](https://gitlab.com/aliseeksapi/aliseeks/issues/new)
 or feel free to contact us through any other channel.
 
 For any other questions, technical support, integration questions, we'd suggest to go
