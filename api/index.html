@@ -220,7 +220,18 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction 👋">Introduction 👋</a>
+          </li>
+          <li>
+            <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting Started">Getting Started</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#postman" class="toc-h2 toc-link" data-title="Postman">Postman</a>
+                  </li>
+                  <li>
+                    <a href="#client-libraries" class="toc-h2 toc-link" data-title="Client Libraries">Client Libraries</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
@@ -229,7 +240,7 @@
             <a href="#search-api" class="toc-h1 toc-link" data-title="Search API">Search API</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#search-products-realtime-beta" class="toc-h2 toc-link" data-title="Search Products (Realtime) - Beta">Search Products (Realtime) - Beta</a>
+                    <a href="#search-products-realtime" class="toc-h2 toc-link" data-title="Search Products (Realtime)">Search Products (Realtime)</a>
                   </li>
                   <li>
                     <a href="#search-products-non-realtime" class="toc-h2 toc-link" data-title="Search Products (Non-realtime)">Search Products (Non-realtime)</a>
@@ -293,12 +304,14 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
+        <h1 id='introduction'>Introduction 👋</h1>
 <p>The Aliseeks API is a public <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> API. Our API allows retrieval of Aliseeks
 data under different resource URLs and uses HTTP Response Codes to indicate API errors. We support cross-origin resource sharing,
 allowing you to interact securely with our API from a client web application.</p>
 
-<p><strong><a href="https://documenter.getpostman.com/view/3150332/RznFqeQE">Get started quickly by using our Postman Collection!</a></strong></p>
+<p>⌨️ <strong><a href="#getting-started">Supported Client Libraries</a></strong></p>
+
+<p>🏃 <strong><a href="https://documenter.getpostman.com/view/3150332/RznFqeQE">Make requests in seconds with our Postman Collection!</a></strong></p>
 
 <p>Aliseeks API allows interaction with two data sources.</p>
 
@@ -308,12 +321,54 @@ allowing you to interact securely with our API from a client web application.</p
 </ul>
 
 <p>Aliseeks API provides AliExpress search, product details with variations, and freight information. You can view request
-and response samples of each API operation. If you encounter any problems using this API, please contact
-our development team at <strong>alex@aliseeks.com</strong> or through our Slack channel .</p>
+and response samples of each API operation. 🔥 If you encounter any problems using this API, <a href="#support">please
+contact us</a>.</p>
 
-<p>Check out live status of the API by visiting our <a href="https://status.aliseeks.com/d/yYBGQYEiz/aliseeks-api-status?refresh=10s&amp;orgId=2&amp;kiosk=1"><strong>public API status dashboard</strong></a>.</p>
+<p>📈 Check out live status of the API by visiting our <a href="https://status.aliseeks.com/d/yYBGQYEiz/aliseeks-api-status?refresh=10s&amp;orgId=2&amp;kiosk=1"><strong>public API status dashboard</strong></a>.</p>
 
 <p><img src="../images/slack_16.png" alt="slack" /> <a href="https://join.slack.com/t/aliseeks/shared_invite/enQtNDg3NTQ1OTQ0MjExLWQwOTkyYjIxYjc1NjI0YjMwNTYzMmEyYTViMTlhNjhjOWNlMWIyOTNmNTViYzQzZmQ5YzFiZTgxYjM3OWRkZmM"><strong>Join our Slack channel</strong></a></p>
+<h1 id='getting-started'>Getting Started</h1><h2 id='postman'>Postman</h2>
+<p>The quickest way to start making requests to Aliseeks is by using our 
+<a href="https://documenter.getpostman.com/view/3150332/RznFqeQE">Postman Collection</a>.</p>
+
+<p><a href="https://www.getpostman.com/">Postman</a> allows you to manually construct requests and
+send them to the API and see responses.</p>
+<h2 id='client-libraries'>Client Libraries</h2>
+<p>We vend out several client libraries to make application integration very easy. We currently
+vend client libraries in the following languages:</p>
+
+<ul>
+<li><a href="https://gitlab.com/aliseeksapi/aliseeks-csharp-sdk">C#</a></li>
+<li><a href="https://gitlab.com/aliseeksapi/aliseeks-java-sdk">Java</a></li>
+<li><a href="https://gitlab.com/aliseeksapi/aliseeks-java-sdk">Javascript</a></li>
+<li><a href="https://gitlab.com/aliseeksapi/aliseeks-php-sdk">PHP</a></li>
+<li><a href="https://gitlab.com/aliseeksapi/aliseeks-python-sdk">Python</a></li>
+<li><a href="https://gitlab.com/aliseeksapi/aliseeks-ruby-sdk">Ruby</a></li>
+</ul>
+<h3 id='don-39-t-see-your-language-listed'>Don&#39;t see your language listed?</h3>
+<p>These clients are automatically generated from
+an <a href="https://github.com/OAI/OpenAPI-Specification">OpenAPI</a> specification. Aliseeks
+<a href="https://gitlab.com/aliseeksapi/aliseeksswagger/raw/master/openapi/aliseeks.yaml">public OpenAPI specification</a> is listed available and can be used to auto-generate
+custom clients that are currently not specifically vended.</p>
+
+<p>There are several open source tools available for auto-generating clients. Aliseeks uses
+<a href="https://github.com/OpenAPITools/openapi-generator">openapi-generator</a>. <code>openapi-generator</code>
+can auto-generate clients in 40+ languages.  </p>
+
+<blockquote>
+<p>Generating a new client with <code>openapi-generator</code></p>
+</blockquote>
+<pre class="highlight shell"><code>openapi-generator generate -i https://gitlab.com/aliseeksapi/aliseeksswagger/raw/master/openapi/aliseeks.yaml <span class="se">\</span>
+  -g kotlin
+</code></pre><h3 id='help-needed'>Help needed!</h3>
+<p>Don&#39;t see your language listed? Or would like to contribute to an existing client?
+You can contribute back to the community by keeping clients up to date and improving their
+code quality.</p>
+
+<p>All clients are generated from <a href="https://gitlab.com/aliseeksapi/aliseeksswagger">AliseeksSwagger</a>.
+Contributions are welcomed and changes are propagated to the respective client repositories.</p>
+
+<p><a href="https://gitlab.com/aliseeksapi/aliseeksswagger/issues">Submit an issue</a> if you&#39;ve got an idea or suggestion.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize your requests, append a header X-Api-Client-Id with your API key:</p>
@@ -337,7 +392,7 @@ our development team at <strong>alex@aliseeks.com</strong> or through our Slack 
 <aside class="notice">
 You must replace <code>Your Api Key</code> with your personal API key.
 </aside>
-<h1 id='search-api'>Search API</h1><h2 id='search-products-realtime-beta'>Search Products (Realtime) - Beta</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/search/realtime</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<h1 id='search-api'>Search API</h1><h2 id='search-products-realtime'>Search Products (Realtime)</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/search/realtime</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="s">{</span>
 <span class="s">  "text": "battery backup",</span>
 <span class="s">  "category": "200003482",</span>
@@ -1349,15 +1404,22 @@ please retry your request and let us know if you see persistant problems.</p>
 <p>Again our contact is: <strong>alex@aliseeks.com</strong> . This API is not very mature yet
 and things may change or not work properly.</p>
 <h1 id='support'>Support</h1>
+<p>🔥 For operational issues check the <a href="https://status.aliseeks.com/d/yYBGQYEiz/aliseeks-api-status?refresh=10s&amp;orgId=2&amp;kiosk=1"><strong>API live status dashboard</strong></a> and
+contact us through <a href="https://join.slack.com/t/aliseeks/shared_invite/enQtNDg3NTQ1OTQ0MjExLWQwOTkyYjIxYjc1NjI0YjMwNTYzMmEyYTViMTlhNjhjOWNlMWIyOTNmNTViYzQzZmQ5YzFiZTgxYjM3OWRkZmM">Slack</a>.</p>
+
+<p>🔧 For non-operational issues, feature suggestions, improvements
+<a href="https://gitlab.com/wakawaka54/aliseeks/issues/new">submit an issue</a>
+or feel free to contact us through any other channel.</p>
+
+<p>For any other questions, technical support, integration questions, we&#39;d suggest to go
+to the Slack channel as we are quite active on there.</p>
+
 <p><img src="../images/slack_16.png" alt="slack" /> <a href="https://join.slack.com/t/aliseeks/shared_invite/enQtNDg3NTQ1OTQ0MjExLWQwOTkyYjIxYjc1NjI0YjMwNTYzMmEyYTViMTlhNjhjOWNlMWIyOTNmNTViYzQzZmQ5YzFiZTgxYjM3OWRkZmM"><strong>Join our Slack channel</strong></a></p>
 
-<p>Feel free to contact us if you need help, are having problems, or would like to
-make a feature request. This API is very young and relies on our clients to
-help us understand where it needs to improve.</p>
+<p>✉️ If you&#39;d rather send an email, you can direct your emails to
+<strong>alex@aliseeks.com</strong> .</p>
 
-<p>Find out about API level issues or alerts by visiting our <a href="https://status.aliseeks.com/d/yYBGQYEiz/aliseeks-api-status?refresh=10s&amp;orgId=2&amp;kiosk=1"><strong>live status dashboard</strong></a>.</p>
-
-<p>Our contact is <strong>alex@aliseeks.com</strong>. Feel free to drop us an email.</p>
+<p>Feel free to contact us about anything! 👍</p>
 
       </div>
       <div class="dark-box">
