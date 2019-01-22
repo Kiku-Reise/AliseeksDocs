@@ -15,7 +15,7 @@ vend client libraries in the following languages:
 
 * [C#](https://gitlab.com/aliseeksapi/aliseeks-csharp-sdk)
 * [Java](https://gitlab.com/aliseeksapi/aliseeks-java-sdk)
-* [Javascript](https://gitlab.com/aliseeksapi/aliseeks-java-sdk)
+* [Javascript](https://gitlab.com/aliseeksapi/aliseeks-javascript-sdk)
 * [PHP](https://gitlab.com/aliseeksapi/aliseeks-php-sdk)
 * [Python](https://gitlab.com/aliseeksapi/aliseeks-python-sdk)
 * [Ruby](https://gitlab.com/aliseeksapi/aliseeks-ruby-sdk)
