@@ -258,6 +258,85 @@ uploadKey | string | empty | The file key provided when an image is uploaded usi
 currency | string | USD | The currency that prices should be returned | [See supported realtime currencies.](#currency)
 category | integer | null | The category to search in | [See valid categories](/aliexpress/category)
 
+## Search Best Selling Products (Realtime)
+
+```http
+POST /v1/search/bestSelling HTTP/1.1
+{
+  "range": "top",
+  "category": "all",
+  "skip": 20,
+  "locale": "en_US",
+  "currency": "USD"
+}
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "items": [
+        {
+            "id": "32287093437",
+            "title": "LongWay Vintage Big Round Flower Gold color Silver color Statement Drop Earrings For Women Crystal Wedding Earrings SER140389",
+            "imageUrl": "http://g04.a.alicdn.com/kf/HTB1ayPsLFXXXXcMXXXXq6xXFXXX1/New-Arrival-Big-Round-Drop-Earrings-For-Women-Real-Gold-Silver-Plated-Brincos-Pendientes-Crystal-Statement.jpg_350x350.jpg",
+            "ratings": "4.7",
+            "orders": 157,
+            "detailUrl": "http://www.aliexpress.com/item/New-Arrival-Big-Round-Drop-Earrings-For-Women-Real-Gold-Silver-Plated-Brincos-Pendientes-Crystal-Statement/32287093437.html?sdom=655.123089.110643.0_32287093437",
+            "storeDetailUrl": "http://www.aliexpress.com/store/product/New-Arrival-Big-Round-Drop-Earrings-For-Women-Real-Gold-Silver-Plated-Brincos-Pendientes-Crystal-Statement/728483_32287093437.html?sdom=655.123089.110643.0_32287093437",
+            "priceOptions": [
+                {
+                    "type": "pc_price",
+                    "originalAmount": {
+                        "currency": "USD",
+                        "value": "3.9"
+                    },
+                    "amount": {
+                        "currency": "USD",
+                        "value": "1.99"
+                    }
+                },
+                {
+                    "type": "app_price",
+                    "originalAmount": {
+                        "currency": "USD",
+                        "value": "3.9"
+                    },
+                    "amount": {
+                        "currency": "USD",
+                        "value": "1.95"
+                    }
+                }
+            ]
+        }
+    ]
+}
+```
+
+This endpoint allows searching best selling `weekly` or `top` AliExpress products in multiple categories in **realtime**. This can be used to
+find the best selling products provided by AliExpress and then using these products for dropshipping or reselling on other sites.
+
+### HTTP Request
+
+`POST https://api.aliseeks.com/v1/search/bestSelling`
+
+### Body Parameters
+
+Parameter | Type | Default | Description | Allowed Values
+--------- | ---- | ------- | ----------- | --------------
+range | string | top | Either search for `top` or `weekly` best selling items | `top` `weekly`
+category | string | electronics | The category to search for best selling items. Only certain categories are allowed per range. See below. | `all` `fashion` `sports` `health_beauty` `home_garden` `kids_baby` `automotive` `men` `women`
+skip | integer | 0 | The number of matched items to skip | [0 - 5000]
+locale | string | en_US | The locale that the product and information should be returned in. | [See locales](#locale)
+currency | string | USD | The currency that prices should be returned | [See supported realtime currencies.](#currency)
+
+When finding `top` best selling items the categories `all`, `fashion`, `electronics`, `sports`, `health_beauty`, `kids_baby`,
+`home_garden`, `automotive` are supported.
+
+When finding `weekly` best selling items the categories `woman`, `men`, `electronics`, `sports`, `health_beauty`, `kids_baby`
+`automotive` are supported.
+
 ## Upload Image
 
 > This request is not a JSON body, rather it is Form Data. Please check your
