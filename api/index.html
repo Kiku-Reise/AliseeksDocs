@@ -249,6 +249,9 @@
                     <a href="#search-products-by-image" class="toc-h2 toc-link" data-title="Search Products By Image">Search Products By Image</a>
                   </li>
                   <li>
+                    <a href="#search-best-selling-products-realtime" class="toc-h2 toc-link" data-title="Search Best Selling Products (Realtime)">Search Best Selling Products (Realtime)</a>
+                  </li>
+                  <li>
                     <a href="#upload-image" class="toc-h2 toc-link" data-title="Upload Image">Upload Image</a>
                   </li>
                   <li>
@@ -795,6 +798,113 @@ the particular category.</p>
 <td><a href="/aliexpress/category">See valid categories</a></td>
 </tr>
 </tbody></table>
+<h2 id='search-best-selling-products-realtime'>Search Best Selling Products (Realtime)</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/search/bestSelling</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s">{</span>
+<span class="s">  "range": "top",</span>
+<span class="s">  "category": "all",</span>
+<span class="s">  "skip": 20,</span>
+<span class="s">  "locale": "en_US",</span>
+<span class="s">  "currency": "USD"</span>
+<span class="s">}</span>
+
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32287093437"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LongWay Vintage Big Round Flower Gold color Silver color Statement Drop Earrings For Women Crystal Wedding Earrings SER140389"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://g04.a.alicdn.com/kf/HTB1ayPsLFXXXXcMXXXXq6xXFXXX1/New-Arrival-Big-Round-Drop-Earrings-For-Women-Real-Gold-Silver-Plated-Brincos-Pendientes-Crystal-Statement.jpg_350x350.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ratings"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.7"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="mi">157</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"detailUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.aliexpress.com/item/New-Arrival-Big-Round-Drop-Earrings-For-Women-Real-Gold-Silver-Plated-Brincos-Pendientes-Crystal-Statement/32287093437.html?sdom=655.123089.110643.0_32287093437"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"storeDetailUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.aliexpress.com/store/product/New-Arrival-Big-Round-Drop-Earrings-For-Women-Real-Gold-Silver-Plated-Brincos-Pendientes-Crystal-Statement/728483_32287093437.html?sdom=655.123089.110643.0_32287093437"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priceOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pc_price"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"originalAmount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.9"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.99"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"app_price"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"originalAmount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.9"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.95"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows searching best selling <code>weekly</code> or <code>top</code> AliExpress products in multiple categories in <strong>realtime</strong>. This can be used to
+find the best selling products provided by AliExpress and then using these products for dropshipping or reselling on other sites.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://api.aliseeks.com/v1/search/bestSelling</code></p>
+<h3 id='body-parameters-3'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+<th>Allowed Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>range</td>
+<td>string</td>
+<td>top</td>
+<td>Either search for <code>top</code> or <code>weekly</code> best selling items</td>
+<td><code>top</code> <code>weekly</code></td>
+</tr>
+<tr>
+<td>category</td>
+<td>string</td>
+<td>electronics</td>
+<td>The category to search for best selling items. Only certain categories are allowed per range. See below.</td>
+<td><code>all</code> <code>fashion</code> <code>sports</code> <code>health_beauty</code> <code>home_garden</code> <code>kids_baby</code> <code>automotive</code> <code>men</code> <code>women</code></td>
+</tr>
+<tr>
+<td>skip</td>
+<td>integer</td>
+<td>0</td>
+<td>The number of matched items to skip</td>
+<td>[0 - 5000]</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>string</td>
+<td>en_US</td>
+<td>The locale that the product and information should be returned in.</td>
+<td><a href="#locale">See locales</a></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>string</td>
+<td>USD</td>
+<td>The currency that prices should be returned</td>
+<td><a href="#currency">See supported realtime currencies.</a></td>
+</tr>
+</tbody></table>
+
+<p>When finding <code>top</code> best selling items the categories <code>all</code>, <code>fashion</code>, <code>electronics</code>, <code>sports</code>, <code>health_beauty</code>, <code>kids_baby</code>,
+<code>home_garden</code>, <code>automotive</code> are supported.</p>
+
+<p>When finding <code>weekly</code> best selling items the categories <code>woman</code>, <code>men</code>, <code>electronics</code>, <code>sports</code>, <code>health_beauty</code>, <code>kids_baby</code>
+<code>automotive</code> are supported.</p>
 <h2 id='upload-image'>Upload Image</h2>
 <blockquote>
 <p>This request is not a JSON body, rather it is Form Data. Please check your
@@ -837,7 +947,7 @@ file requests.</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"uploadKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTB8NelmDOaMiuJk43PTq6ySmXXaD.jpg"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
 <p><code>POST https://api.aliseeks.com/v1/search/image/upload</code></p>
 <h3 id='request-parameters-2'>Request Parameters</h3>
 <table><thead>
