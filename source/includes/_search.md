@@ -189,7 +189,7 @@ limit | integer | 50 | The number of matched items to return | [5 - 50]
 scrollPagination | boolean | false | Use for deep pagination, set this to true and use the `scrollIdentifier` returned to retrieve the next page of results | `true` or `false`
 scrollIdentifier | string | empty | Use for deep pagination, set this to the previously retrieved scroll identifier. This value can change between requests, please use the latest one. |
 
-## Search Products By Image
+## Search Products By Image (Realtime)
 
 > You can obtain an `uploadKey` by using the Upload Image API.
 
