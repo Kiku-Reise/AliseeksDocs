@@ -274,6 +274,9 @@
                   <li>
                     <a href="#get-product-html-description" class="toc-h2 toc-link" data-title="Get Product HTML Description">Get Product HTML Description</a>
                   </li>
+                  <li>
+                    <a href="#get-product-transaction-history" class="toc-h2 toc-link" data-title="Get Product Transaction History">Get Product Transaction History</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1421,6 +1424,66 @@ HTML formatting.</p>
 <td>null</td>
 <td>The product ID to retrieve.</td>
 <td></td>
+</tr>
+</tbody></table>
+<h2 id='get-product-transaction-history'>Get Product Transaction History</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/products/transactions</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s">{</span>
+<span class="s">  "productId": "32826897725",</span>
+<span class="s">  "page": 1</span>
+<span class="s">}</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1039</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"98290654042210"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P***."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fr"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-29T07:46:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"piece"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"98526313392210"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P***."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fr"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-29T07:44:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"piece"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint returns the transaction history of an item on AliExpress.</p>
+
+<p>The recent transactions includes the date of the transaction and the quantity purchased, along with the country code
+of the customer.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+<th>Allowed Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>productId</td>
+<td>string</td>
+<td>null</td>
+<td>The product ID to retrieve.</td>
+<td></td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>1</td>
+<td>The page to retrieve</td>
+<td>[1-50]</td>
 </tr>
 </tbody></table>
 <h1 id='types'>Types</h1><h2 id='range'>Range</h2>
