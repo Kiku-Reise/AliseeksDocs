@@ -385,3 +385,49 @@ HTML formatting.
 Parameter | Type | Default | Description | Allowed Values
 --------- | ---- | ------- | ----------- | --------------
 productId | string | null | The product ID to retrieve. |
+
+## Get Product Transaction History
+
+```http
+POST /v1/products/transactions HTTP/1.1
+{
+  "productId": "32826897725",
+  "page": 1
+}
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "count": 1039,
+    "transactions": [
+        {
+            "id": "98290654042210",
+            "name": "P***.",
+            "countryCode": "fr",
+            "quantity": 1,
+            "date": "2019-01-29T07:46:00Z",
+            "unit": "piece"
+        },
+        {
+            "id": "98526313392210",
+            "name": "P***.",
+            "countryCode": "fr",
+            "quantity": 1,
+            "date": "2019-01-29T07:44:00Z",
+            "unit": "piece"
+        }
+    ]
+}
+```
+
+This endpoint returns the transaction history of an item on AliExpress.
+
+The recent transactions includes the date of the transaction and the quantity purchased, along with the country code
+of the customer.
+
+Parameter | Type | Default | Description | Allowed Values
+--------- | ---- | ------- | ----------- | --------------
+productId | string | null | The product ID to retrieve. |
+page | integer | 1 | The page to retrieve | [1-50] 
