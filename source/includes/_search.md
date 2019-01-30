@@ -109,6 +109,9 @@ POST /v1/search HTTP/1.1
     "from": 2.00,
     "to": 50.00
   },
+  "freightTypes": [
+    "ePacket"
+  ],
   "skip": 0,
   "limit": 25,
   "scrollPagination": false
@@ -184,6 +187,7 @@ quantityRange | Range | null | A lot size (sold by quantity) to apply to matched
 priceRange | Range | null | A non-wholesale price filter to apply to matched items. | 
 unitPriceRange | Range | null | A wholesale price filter to apply to matched items. |
 orderRange | Range | null | A number of orders filter to apply to matched items. |
+freightTypes | string[] | null | Freight types filter to apply to matched items. You can use this filter to find items that ship with ePacket. | `ePacket` ... many more, exhaustive list coming soon.
 skip | integer | 0 | The number of matched items to skip | [0 - 5000]
 limit | integer | 50 | The number of matched items to return | [5 - 50]
 scrollPagination | boolean | false | Use for deep pagination, set this to true and use the `scrollIdentifier` returned to retrieve the next page of results | `true` or `false`
