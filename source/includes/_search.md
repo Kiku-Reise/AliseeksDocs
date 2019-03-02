@@ -12,6 +12,12 @@ POST /v1/search/realtime HTTP/1.1
     "from": 12.50,
     "to": 30.00
   },
+  "attributes": [
+    {
+      "id": "16",
+      "value": "256"
+    }
+  ],
   "shipToCountry": "US",
   "shipFromCountry": "CN",
   "sort": "BEST_MATCH",
@@ -29,6 +35,26 @@ POST /v1/search/realtime HTTP/1.1
         "shipFromCountries": [
             "US",
             "CN"
+        ],
+        "attributes": [
+          {
+            "id": "16",
+            "value": "Color",
+            "values": [
+              {
+                "id": "256",
+                "name": "Blue",
+                "color": "Blue",
+                "count": 567
+              },
+              {
+                "id": "872",
+                "name": "Red",
+                "color": "Red",
+                "count": 90
+              }
+            ]
+          }
         ]
     },
     "items": [
@@ -81,6 +107,7 @@ text | string | empty | The search text used to search for products by name |
 sort | string | BEST_MATCH | Defines how the matched items should be sorted. | `BEST_MATCH`, `HIGHEST_PRICE`, `LOWEST_PRICE`, `NUMBER_OF_ORDERS`, `SELLER_RATING`, `NEWEST_TO_OLDEST`
 category | integer | empty | The category of the item | [See valid categories](/aliexpress/category)
 priceRange | Range | null | A price filter to apply to matched items. |
+attributes | attribute[] | null | A list of selected attributes to refine the search by. |
 shipToCountry | string | empty | The country where the product will be shipped to |
 shipFromCountry | string | empty | The country where the product should ship from |
 skip | integer | 0 | The number of matched items to skip | [0 - 5000]
