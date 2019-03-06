@@ -210,7 +210,7 @@ value to retrieve the next page of results.
 Parameter | Type | Default | Description | Allowed Values
 --------- | ---- | ------- | ----------- | --------------
 text | string | empty | The search text used to search for products by name |
-sort | string | BEST_MATCH | Defines how the matched items should be sorted. | `PRODUCT_ID`, `BEST_MATCH`, `WHOLESALE_PRICE`, `ITEM_RATING`, `ORDERS`
+sort | string | BEST_MATCH | Defines how the matched items should be sorted. | `PRODUCT_ID`, `BEST_MATCH`, `MONTHLY_TRANSACTION_RATE`, `WHOLESALE_PRICE`, `ITEM_RATING`, `ORDERS`, `TRANSACTIONS`, `UPDATE_TIME`
 sortDirection | string | ASC | Defines the direction that the items should be sorted. | `ASC`, `DESC`
 category | integer | empty | The category of the item | [See valid categories](/aliexpress/category)
 includeSubcategories | boolean | false | When this is set to `true`, we will include all the products in subcategories of `category` | `true` or `false`
