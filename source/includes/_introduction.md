@@ -14,9 +14,9 @@ Aliseeks API allows interaction with two data sources.
 
 * **Non Real-Time Data** - Comes from Aliseek's periodically updated data source.
 
-Aliseeks API provides AliExpress search, product details with variations, and freight information. You can view request
-and response samples of each API operation. 🔥 If you encounter any problems using this API, [please
-contact us](#support).
+Aliseeks API provides AliExpress search, product details with variations, and freight information. We also are working
+on providing Ordering and Shipment Tracking. You can view request and response samples of each API operation. 🔥 If you 
+encounter any problems using this API, [please contact us](#support).
 
 📈 Check out live status of the API by visiting our [**public API status dashboard**](https://status.aliseeks.com/d/yYBGQYEiz/aliseeks-api-status?refresh=10s&orgId=2&kiosk=1).
 

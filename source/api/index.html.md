@@ -16,6 +16,7 @@ includes:
   - authentication
   - search
   - item
+  - ordering
   - types
   - errors
   - support
