@@ -717,7 +717,9 @@ POST /v1/products/variations HTTP/1.1
                 "currency": "AUD",
                 "value": "23.62"
             },
-            "stock": 50
+            "stock": 50,
+            "bulkQuantity": 2,
+            "imageUrl":  "https://ae01.alicdn.com/kf/HTB18_ObHxWYBuNjy1zkq6xGGpXaX.jpg_120x120q90.jpg_.webp"
         },
         {
             "propertyIdentifiers": [
@@ -740,7 +742,9 @@ POST /v1/products/variations HTTP/1.1
                 "currency": "AUD",
                 "value": "23.62"
             },
-            "stock": 50
+            "stock": 50,
+            "bulkQuantity": 2,
+            "imageUrl":  "https://ae01.alicdn.com/kf/HTB18_ObHxWYBuNjy1zkq6xGGpXaX.jpg_120x120q90.jpg_.webp"
         }
     ]
 }
