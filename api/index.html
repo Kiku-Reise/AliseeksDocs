@@ -289,13 +289,19 @@
             <a href="#ordering-api" class="toc-h1 toc-link" data-title="Ordering API">Ordering API</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#how-to-onboard-a-merchant" class="toc-h2 toc-link" data-title="How to Onboard a Merchant">How to Onboard a Merchant</a>
+                  </li>
+                  <li>
                     <a href="#create-order" class="toc-h2 toc-link" data-title="Create Order">Create Order</a>
+                  </li>
+                  <li>
+                    <a href="#get-order" class="toc-h2 toc-link" data-title="Get Order">Get Order</a>
                   </li>
                   <li>
                     <a href="#get-tracking-information" class="toc-h2 toc-link" data-title="Get Tracking Information">Get Tracking Information</a>
                   </li>
                   <li>
-                    <a href="#get-order" class="toc-h2 toc-link" data-title="Get Order">Get Order</a>
+                    <a href="#register-merchant" class="toc-h2 toc-link" data-title="Register Merchant">Register Merchant</a>
                   </li>
               </ul>
           </li>
@@ -310,6 +316,12 @@
                   </li>
                   <li>
                     <a href="#locale" class="toc-h2 toc-link" data-title="Locale">Locale</a>
+                  </li>
+                  <li>
+                    <a href="#mailingaddress" class="toc-h2 toc-link" data-title="MailingAddress">MailingAddress</a>
+                  </li>
+                  <li>
+                    <a href="#orderlineitem" class="toc-h2 toc-link" data-title="OrderLineItem">OrderLineItem</a>
                   </li>
               </ul>
           </li>
@@ -2035,28 +2047,256 @@ of the customer.</p>
 </tr>
 </tbody></table>
 <h1 id='ordering-api'>Ordering API</h1>
-<p><strong>Want to try out the new Ordering API?</strong> Send us an email at alex@aliseeks.com and we can activate your account
-for Ordering.</p>
+<aside class="notice">
+Please contact us to enable your account for Ordering. Send us an email at alex@aliseeks.com .
+Currently, we are limiting accounts with access to Ordering to paid subscribers.
+</aside>
 
-<p><strong>Currently, only customers on plans of $100 or more per month will be able to use the ordering API</strong>.</p>
-<h2 id='create-order'>Create Order</h2>
-<p><strong>Being implemented - Coming soon!</strong></p>
+<p>The Ordering API allows create and retrieving orders. You can place orders on behalf
+of merchants that are registered to your Aliseeks account. Each merchant registered will be assigned
+a unique <strong>Merchant ID</strong>. You can register a merchant through Aliseeks.com or by 
+using the <a href="#register-merchant">Register Merchant endpoint</a>.</p>
+<h2 id='how-to-onboard-a-merchant'>How to Onboard a Merchant</h2><h3 id='single-merchant-per-account'>Single Merchant per Account</h3>
+<ol>
+<li><p>Onboard a merchant through the Aliseeks Console.
+<img src="../images/merchant-registration-console.jpg" alt="slack" /></p></li>
+<li><p>The <strong>Merchant ID</strong> is provided on the Aliseeks Console.
+<img src="../images/merchant-registration-id-console.jpg" alt="slack" /></p></li>
+</ol>
+<h3 id='multiple-merchants-per-account'>Multiple Merchants per Account</h3>
+<ol>
+<li>Onboard a merchant by redirecting to the URL provided in <a href="#register-merchant">Register Merchant</a>.</li>
+<li>Persist the <strong>Merchant ID</strong> returned by the <a href="#register-merchant">Register Merchant</a> API.</li>
+</ol>
+<h2 id='create-order'>Create Order</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/orders</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s">{</span>
+<span class="s">  "merchantId": "KNmjR40mgOhzzE8Y18Zx",</span>
+<span class="s">  "locale": "en_US",</span>
+<span class="s">  "mailingAddress": {</span>
+<span class="s">    "contactName": "John Smith",</span>
+<span class="s">    "phoneNumber": {</span>
+<span class="s">      "number": "777-777-7777",</span>
+<span class="s">      "countryPrefix": "+1"</span>
+<span class="s">    },</span>
+<span class="s">    "address": {</span>
+<span class="s">      "line1": "12345 Jolly St",</span>
+<span class="s">      "line2": "APT 1234",</span>
+<span class="s">      "city": "Denver",</span>
+<span class="s">      "state": "Colorado",</span>
+<span class="s">      "country": "US",</span>
+<span class="s">      "postalCode": "80123"</span>
+<span class="s">    }</span>
+<span class="s">  },</span>
+<span class="s">  "items": [</span>
+<span class="s">    {</span>
+<span class="s">      "productId": 32844651460,</span>
+<span class="s">      "quantity": 1,</span>
+<span class="s">      "shippingService": "YANWEN_JYT",</span>
+<span class="s">      "properties": [</span>
+<span class="s">        {</span>
+<span class="s">          "id": "200009570",</span>
+<span class="s">          "value": "350262"</span>
+<span class="s">        }</span>
+<span class="s">      ]</span>
+<span class="s">    }</span>
+<span class="s">  ]</span>
+<span class="s">}</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"merchantId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KNmjR40mgOhzzE8Y18Zx"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"orderIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">100505508562817</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<aside class="notice">
+You must have a Merchant ID prior to calling this API.
+</aside>
 
-<p>Are you interested? Send us an email and let us know you want this.</p>
+<p>Creates an order on AliExpress. The order will be created under the account
+associated with the <strong>Merchant ID</strong>. The order will not be paid, the AliExpress account owner will
+need to click on &quot;Pay Now&quot; to complete the transaction, they can pay with any payment method they
+would prefer.</p>
 
-<p><strong>Currently, only customers on plans of $100 or more per month will be able to use the ordering API</strong>.</p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+<th>Allowed Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>merchantId</td>
+<td>string</td>
+<td>empty</td>
+<td>The Merchant ID to use when fetching the order.</td>
+<td></td>
+</tr>
+<tr>
+<td>locale</td>
+<td><a href="#locale">Locale</a></td>
+<td>en_US</td>
+<td>The locale that the item is being purchased from. <a href="#locale">Supported Locales</a></td>
+<td></td>
+</tr>
+<tr>
+<td>mailingAddress</td>
+<td><a href="#mailingaddress">MailingAddress</a></td>
+<td>null</td>
+<td>Mailing address information for the order.</td>
+<td></td>
+</tr>
+<tr>
+<td>items</td>
+<td><a href="#orderlineitem">OrderLineItem</a>[]</td>
+<td>null</td>
+<td>List of line items for the order.</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='get-order'>Get Order</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/v1/orders?merchantId=AjbjasWsnzse&amp;orderId=828752957</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"828752957xxx"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-29T00:07:56Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71.78"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order_completed"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"shippingStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shipped"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"store"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"718232"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BIG TREE TECH Store"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliexpress.com/store/718232"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"shipping"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"trackingNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DH002886407AE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"shippingService"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAINIAO_STANDARD"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"trackingNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LP00068298585456"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"shippingService"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAINIAO_STANDARD"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"productId"</span><span class="p">:</span><span class="w"> </span><span class="mi">32602496788</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50PCS 3D Printer Prusa Mendel 12v40w 6*20 Cartridge Heater Reprap 12V 40W WITH Free Shipping"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"38.89"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<aside class="notice">
+You must have a Merchant ID prior to calling this API.
+</aside>
+
+<p>Fetches the information for a particular Order. </p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+<th>Allowed Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>merchantId</td>
+<td>string</td>
+<td>empty</td>
+<td>The Merchant ID to use when fetching the order.</td>
+<td></td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>string</td>
+<td>empty</td>
+<td>The Order ID to retrieve information about.</td>
+<td></td>
+</tr>
+</tbody></table>
 <h2 id='get-tracking-information'>Get Tracking Information</h2>
 <p><strong>Being implemented - Coming soon!</strong></p>
 
 <p>Are you interested? Send us an email and let us know you want this.</p>
+<h2 id='register-merchant'>Register Merchant</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/merchants</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="s">{</span>
+<span class="s">  "redirectUrl": "https://your-domain.com/accounts/merchants",</span>
+<span class="s">  "merchantId": "ExistingMerchantId"</span>
+<span class="s">}</span>
+</code></pre>
+<blockquote>
+<p>Please make sure to save the <code>merchantId</code> returned by this API as you will need it
+to interact with an account. The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"merchantId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AjbjasWsnzse"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://redirect-your-customer-here.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<aside class="warning">
+Only certain accounts are whitelisted to register merchants through the API. Please contact us
+if this is something you need.
+</aside>
 
-<p><strong>Currently, only customers on plans of $100 or more per month will be able to use the ordering API</strong>.</p>
-<h2 id='get-order'>Get Order</h2>
-<p><strong>Being implemented - Coming soon!</strong></p>
+<aside class="notice">
+Your customers must reauthorize through this flow once a month or requests for this merchant will fail.
+</aside>
 
-<p>Are you interested? Send us an email and let us know you want this.</p>
+<p>This endpoint allows registration of merchant accounts through the API. Merchants can usually only
+be registered through the Aliseeks Console, however your account may be whitelisted to use this endpoint
+to allow registering more than one merchant on your account.</p>
 
-<p><strong>Currently, only customers on plans of $100 or more per month will be able to use the ordering API</strong>.</p>
+<p>To register a customer account and allow placing automated orders, call this endpoint and provide a
+<code>redirectUrl</code> which we will use to redirect your customer after receiving Authorization to allow Aliseeks
+to place orders on their behalf.</p>
+
+<p>Redirect your customer to the <code>redirectUrl</code> provided in the response. Do not reuse this <code>redirectUrl</code> between
+customers. It can only be used once.</p>
+
+<p>Be sure to save the <code>merchantId</code> in the response so you can use it to place or get orders on behalf of
+this customer. You can optionally pass in a <code>merchantId</code> if you are re-authorizing your customer.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+<th>Allowed Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>redirectUrl</td>
+<td>string</td>
+<td>empty</td>
+<td>The URL that the customer will be redirected to after authorizing Aliseeks to access their AliExpress account.</td>
+<td></td>
+</tr>
+<tr>
+<td>merchantId</td>
+<td>string</td>
+<td>empty</td>
+<td>Optional - Can be used when re-authorizing a customer to keep a consistent Merchant ID between re-authorizations</td>
+<td></td>
+</tr>
+</tbody></table>
 <h1 id='types'>Types</h1><h2 id='range'>Range</h2>
 <blockquote>
 <p>Simple range</p>
@@ -2115,6 +2355,176 @@ are the country code.
 <p>Only a small subset of the global locales can be used in the Aliseeks API.</p>
 <h3 id='supported-locales'>Supported Locales</h3>
 <p>ar_SA, de_DE, en_US, es_ES, fr_FR, he_IL, ko_KR, pl_PL, pt_BR, ru_RU, tr_TR</p>
+<h2 id='mailingaddress'>MailingAddress</h2>
+<blockquote>
+<p>Example of a mailing address</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"contactName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fullName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"taxNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"777-777-7777"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"countryPrefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"line1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345 Jolly St"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"line2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APT 1234"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Denver"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Colorado"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"postalCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"80123"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>A mailing address defines all the components needed to mail an item to a particular location.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+<th>Allowed Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contactName</td>
+<td>string</td>
+<td>empty</td>
+<td><strong>Required</strong> The name of the individual at the address</td>
+<td></td>
+</tr>
+<tr>
+<td>fullName</td>
+<td>string</td>
+<td>empty</td>
+<td>Additional name of the individual at the address</td>
+<td></td>
+</tr>
+<tr>
+<td>taxNumber</td>
+<td>string</td>
+<td>empty</td>
+<td>Tax identification number associated with the address</td>
+<td></td>
+</tr>
+<tr>
+<td>phoneNumber.number</td>
+<td>string</td>
+<td>empty</td>
+<td><strong>Required</strong> The phone number for the address</td>
+<td></td>
+</tr>
+<tr>
+<td>phoneNumber.countryPrefix</td>
+<td>string</td>
+<td>empty</td>
+<td><strong>Required</strong> The country prefix for the address</td>
+<td></td>
+</tr>
+<tr>
+<td>address.line1</td>
+<td>string</td>
+<td>empty</td>
+<td><strong>Required</strong> The primary street level address, e.g. 12345 Jolly St</td>
+<td></td>
+</tr>
+<tr>
+<td>address.line2</td>
+<td>string</td>
+<td>empty</td>
+<td><strong>Required</strong> The secondary street level address, e.g. APT 12345</td>
+<td></td>
+</tr>
+<tr>
+<td>address.city</td>
+<td>string</td>
+<td>empty</td>
+<td><strong>Required</strong> The city of the address</td>
+<td></td>
+</tr>
+<tr>
+<td>address.state</td>
+<td>string</td>
+<td>empty</td>
+<td><strong>Required</strong> The state/providence of the address</td>
+<td></td>
+</tr>
+<tr>
+<td>address.country</td>
+<td>string</td>
+<td>empty</td>
+<td><strong>Required</strong> The country code of the address, must be ISO 2 Character.</td>
+<td></td>
+</tr>
+<tr>
+<td>address.postalCode</td>
+<td>string</td>
+<td>empty</td>
+<td>The postal code of the address.</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='orderlineitem'>OrderLineItem</h2>
+<blockquote>
+<p>Example of an order line item</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"productId"</span><span class="p">:</span><span class="w"> </span><span class="mi">32844651460</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"shippingService"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YANWEN_JYT"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200009570"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"350262"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>An order line item defines a specific line item in an order. The shipping service can
+be retrieved from calling <a href="#get-product-shipping">Get Product Shipping</a>. The properties are
+also referred to as sku properties are the identifiers that define an AliExpress sku and can be
+retrieved from calling <a href="#get-product">Get Product</a>.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+<th>Allowed Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>productId</td>
+<td>number</td>
+<td>empty</td>
+<td><strong>Required</strong> The AliExpress product ID of the item</td>
+<td></td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>number</td>
+<td>empty</td>
+<td><strong>Required</strong> The number of the item</td>
+<td></td>
+</tr>
+<tr>
+<td>shippingService</td>
+<td>number</td>
+<td>empty</td>
+<td><strong>Required</strong> The shipping service to use to ship the item, can be retrieved from <a href="#get-product-shipping">Get Product Shipping</a>.</td>
+<td></td>
+</tr>
+<tr>
+<td>properties</td>
+<td>property[]</td>
+<td>empty</td>
+<td><strong>Required</strong> List of sku identifiers that define a product variation, can be retrieved from <a href="#get-product">Get Product</a>.</td>
+<td></td>
+</tr>
+</tbody></table>
 <h1 id='errors'>Errors</h1>
 <blockquote>
 <p>Typical error response (in this case the request is missing productId)</p>
