@@ -2068,7 +2068,12 @@ using the <a href="#register-merchant">Register Merchant endpoint</a>.</p>
 <li>Onboard a merchant by redirecting to the URL provided in <a href="#register-merchant">Register Merchant</a>.</li>
 <li>Persist the <strong>Merchant ID</strong> returned by the <a href="#register-merchant">Register Merchant</a> API.</li>
 </ol>
-<h2 id='create-order'>Create Order</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/orders</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<h2 id='create-order'>Create Order</h2>
+<blockquote>
+<p>This is only a sample request, do not use this in production. Fill in the request body with a known address, phone
+number and correct product information.</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/v1/orders</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="s">{</span>
 <span class="s">  "merchantId": "KNmjR40mgOhzzE8Y18Zx",</span>
 <span class="s">  "locale": "en_US",</span>
