@@ -26,6 +26,9 @@ using the [Register Merchant endpoint](#register-merchant).
 
 ## Create Order
 
+> This is only a sample request, do not use this in production. Fill in the request body with a known address, phone
+number and correct product information.
+
 ```http
 POST /v1/orders HTTP/1.1
 {
