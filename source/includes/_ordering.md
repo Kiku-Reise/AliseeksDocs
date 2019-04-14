@@ -14,15 +14,20 @@ using the [Register Merchant endpoint](#register-merchant).
 ## How to Onboard a Merchant
 
 ### Single Merchant per Account
-1. Onboard a merchant through the Aliseeks Console.
+1. Join the [AliExpress Dropshipping Program.](https://home.aliexpress.com/dropshipper/ds_center.htm)
+![dropshipping](dropshipping-console.jpg)
+
+2. Onboard a merchant through the Aliseeks Console.
 ![slack](merchant-registration-console.jpg)
 
-2. The **Merchant ID** is provided on the Aliseeks Console.
+3. The **Merchant ID** is provided on the Aliseeks Console.
 ![slack](merchant-registration-id-console.jpg)
 
 ### Multiple Merchants per Account
-1. Onboard a merchant by redirecting to the URL provided in [Register Merchant](#register-merchant).
-2. Persist the **Merchant ID** returned by the [Register Merchant](#register-merchant) API.
+1. Make sure all your merchants have agreed to the join the [AliExpress Dropshipping Program](https://home.aliexpress.com/dropshipper/ds_center.htm).
+![dropshipping](dropshipping-console.jpg)
+2. Onboard a merchant by redirecting to the URL provided in [Register Merchant](#register-merchant).
+3. Persist the **Merchant ID** returned by the [Register Merchant](#register-merchant) API.
 
 ## Create Order
 
