@@ -178,19 +178,22 @@ POST /v1/products HTTP/1.1
                 "value": "13.97"
             },
             "bulkQuantity": 2,
-            "skuImage": "https://ae01.alicdn.com/kf/HTB18_ObHxWYBuNjy1zkq6xGGpXaX.jpg_120x120q90.jpg_.webp",
+            "skuImage": "https://ae01.alicdn.com/kf/HTB18_ObHxWYBuNjy1zkq6xGGpXaX.jpg_640x640q90.jpg_.webp",
+            "skuThumbnail": "https://ae01.alicdn.com/kf/HTB18_ObHxWYBuNjy1zkq6xGGpXaX.jpg_120x120q90.jpg_.webp",
             "stock": 50,
             "properties": [
                 {
                     "propertyId": 14,
                     "valueId": 29,
                     "valueName": "White",
-                    "valueDisplayName": "White"
+                    "valueDisplayName": "White",
+                    "sku": "14:29#White"
                 },
                 {
                     "propertyId": 5,
                     "valueId": 361385,
-                    "valueDisplayName": "L"
+                    "valueDisplayName": "L",
+                    "sku": "5:361385"
                 }
             ]
         },
@@ -208,19 +211,22 @@ POST /v1/products HTTP/1.1
                 "value": "13.97"
             },
             "bulkQuantity": 2,
-            "skuImage": "https://ae01.alicdn.com/kf/HTB18_ObHxWYBuNjy1zkq6xGGpXaX.jpg_120x120q90.jpg_.webp",
+            "skuImage": "https://ae01.alicdn.com/kf/HTB18_ObHxWYBuNjy1zkq6xGGpXaX.jpg_640x640q90.jpg_.webp",
+            "skuThumbnail": "https://ae01.alicdn.com/kf/HTB18_ObHxWYBuNjy1zkq6xGGpXaX.jpg_120x120q90.jpg_.webp",
             "stock": 47,
             "properties": [
                 {
                     "propertyId": 14,
                     "valueId": 29,
                     "valueName": "White",
-                    "valueDisplayName": "White"
+                    "valueDisplayName": "White",
+                    "sku": "14:29#White"
                 },
                 {
                     "propertyId": 5,
                     "valueId": 361386,
-                    "valueDisplayName": "M"
+                    "valueDisplayName": "M",
+                    "sku": "5:361386"
                 }
             ]
         },
@@ -238,19 +244,22 @@ POST /v1/products HTTP/1.1
                 "value": "13.59"
             },
             "bulkQuantity": 2,
-            "skuImage": "https://ae01.alicdn.com/kf/HTB18_ObHxWYBuNjy1zkq6xGGpXaX.jpg_120x120q90.jpg_.webp",
+            "skuImage": "https://ae01.alicdn.com/kf/HTB18_ObHxWYBuNjy1zkq6xGGpXaX.jpg_640x640q90.jpg_.webp",
+            "skuThumbnail": "https://ae01.alicdn.com/kf/HTB18_ObHxWYBuNjy1zkq6xGGpXaX.jpg_120x120q90.jpg_.webp",
             "stock": 49,
             "properties": [
                 {
                     "propertyId": 14,
                     "valueId": 29,
                     "valueName": "White",
-                    "valueDisplayName": "White"
+                    "valueDisplayName": "White",
+                    "sku": "14:29#White"
                 },
                 {
                     "propertyId": 5,
                     "valueId": 100014064,
-                    "valueDisplayName": "S"
+                    "valueDisplayName": "S",
+                    "sku": "5:100014064"
                 }
             ]
         },
@@ -269,18 +278,21 @@ POST /v1/products HTTP/1.1
             },
             "bulkQuantity": 2,
             "skuImage": "https://ae01.alicdn.com/kf/HTB18_ObHxWYBuNjy1zkq6xGGpXaX.jpg_120x120q90.jpg_.webp",
+            "skuThumbnail": "https://ae01.alicdn.com/kf/HTB18_ObHxWYBuNjy1zkq6xGGpXaX.jpg_640x640q90.jpg_.webp",
             "stock": 50,
             "properties": [
                 {
                     "propertyId": 14,
                     "valueId": 29,
                     "valueName": "White",
-                    "valueDisplayName": "White"
+                    "valueDisplayName": "White",
+                    "sku": "14:29#White"
                 },
                 {
                     "propertyId": 5,
                     "valueId": 100014065,
-                    "valueDisplayName": "XL"
+                    "valueDisplayName": "XL",
+                    "sku": "5:100014065"
                 }
             ]
         }
@@ -719,7 +731,8 @@ POST /v1/products/variations HTTP/1.1
             },
             "stock": 50,
             "bulkQuantity": 2,
-            "imageUrl":  "https://ae01.alicdn.com/kf/HTB18_ObHxWYBuNjy1zkq6xGGpXaX.jpg_120x120q90.jpg_.webp"
+            "imageUrl":  "https://ae01.alicdn.com/kf/HTB18_ObHxWYBuNjy1zkq6xGGpXaX.jpg_120x120q90.jpg_.webp",
+            "thumbnailImageUrl":  "https://ae01.alicdn.com/kf/HTB18_ObHxWYBuNjy1zkq6xGGpXaX.jpg_120x120q90.jpg_.webp"
         },
         {
             "propertyIdentifiers": [

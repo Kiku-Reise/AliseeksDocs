@@ -61,8 +61,7 @@ POST /v1/orders HTTP/1.1
       "shippingService": "YANWEN_JYT",
       "properties": [
         {
-          "id": "200009570",
-          "value": "350262"
+          "sku": "200000828:200003982#Add Free Gift"
         }
       ]
     }
@@ -89,6 +88,8 @@ Creates an order on AliExpress. The order will be created under the account
 associated with the **Merchant ID**. The order will not be paid, the AliExpress account owner will
 need to click on "Pay Now" to complete the transaction, they can pay with any payment method they
 would prefer.
+
+[Use case - Create an Order Guide.](https://aliseeks.gitbook.io/docs/use-cases/create-dropshipping-order)
 
 Parameter | Type | Default | Description | Allowed Values
 --------- | ---- | ------- | ----------- | --------------
