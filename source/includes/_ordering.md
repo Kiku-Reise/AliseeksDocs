@@ -37,35 +37,38 @@ number and correct product information.
 ```http
 POST /v1/orders HTTP/1.1
 {
-  "merchantId": "KNmjR40mgOhzzE8Y18Zx",
-  "locale": "en_US",
-  "mailingAddress": {
-    "contactName": "John Smith",
-    "phoneNumber": {
-      "number": "777-777-7777",
-      "countryPrefix": "+1"
-    },
-    "address": {
-      "line1": "12345 Jolly St",
-      "line2": "APT 1234",
-      "city": "Denver",
-      "state": "Colorado",
-      "country": "US",
-      "postalCode": "80123"
-    }
-  },
-  "items": [
-    {
-      "productId": 32844651460,
-      "quantity": 1,
-      "shippingService": "YANWEN_JYT",
-      "properties": [
-        {
-          "sku": "200000828:200003982#Add Free Gift"
+	"merchantId": "YOUR_MERCANT_ID",
+    "locale": "en_US",
+    "mailingAddress": {
+        "contactName": "John Modena",
+        "phoneNumber": {
+            "number": "7137398000",
+            "countryPrefix": "+1"
+        },
+        "address": {
+            "line1": "1600 Lamar St",
+            "line2": "",
+            "city": "Houston",
+            "state": "Texas",
+            "country": "US",
+            "postalCode": "77010"
         }
-      ]
-    }
-  ]
+    },
+    "items": [
+        {
+            "productId": 32690828906,
+            "quantity": 1,
+            "shippingService": "YANWEN_JYT",
+            "properties": [
+                {
+                    "sku": "14:29#clear"
+                },
+                {
+                	"sku": "200000061:1454#6x8mm  70pcs"
+                }
+            ]
+        }
+    ]
 }
 ```
 
@@ -73,9 +76,9 @@ POST /v1/orders HTTP/1.1
 
 ```json
 {
-    "merchantId": "KNmjR40mgOhzzE8Y18Zx",
+    "merchantId": "YOUR_MERCHANT_ID",
     "orderIds": [
-        100505508562817
+        101274465122817
     ]
 }
 ```
