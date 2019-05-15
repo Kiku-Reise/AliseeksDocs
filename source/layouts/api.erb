@@ -32,6 +32,9 @@ under the License.
     <%= favicon_tag 'images/favicon.ico' %>
     <title><%= current_page.data.title || "API Documentation" %></title>
 
+    <!-- Disable indexing -->
+    <meta name="robots" content="noindex">
+
     <style>
       <%= Rouge::Themes::MonokaiSublime.render(:scope => '.highlight') %>
     </style>
