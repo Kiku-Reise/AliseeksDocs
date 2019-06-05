@@ -321,6 +321,9 @@
                     <a href="#locale" class="toc-h2 toc-link" data-title="Locale">Locale</a>
                   </li>
                   <li>
+                    <a href="#freight-types" class="toc-h2 toc-link" data-title="Freight Types">Freight Types</a>
+                  </li>
+                  <li>
                     <a href="#mailingaddress" class="toc-h2 toc-link" data-title="MailingAddress">MailingAddress</a>
                   </li>
                   <li>
@@ -766,8 +769,8 @@ value to retrieve the next page of results.</p>
 <td>freightTypes</td>
 <td>string[]</td>
 <td>null</td>
-<td>Freight types filter to apply to matched items. You can use this filter to find items that ship with ePacket.</td>
-<td><code>ePacket</code> ... many more, exhaustive list coming soon.</td>
+<td>Freight types filter to apply to matched items. You can use this filter to find items that ship with a shipping method.</td>
+<td><a href="#freight-types">See supported freight types.</a></td>
 </tr>
 <tr>
 <td>sellers</td>
@@ -2384,6 +2387,33 @@ are the country code.
 <p>Only a small subset of the global locales can be used in the Aliseeks API.</p>
 <h3 id='supported-locales'>Supported Locales</h3>
 <p>ar_SA, de_DE, en_US, es_ES, fr_FR, he_IL, ko_KR, pl_PL, pt_BR, ru_RU, tr_TR</p>
+<h2 id='freight-types'>Freight Types</h2>
+<blockquote>
+<p>Example of a freight type</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"freight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ePacket"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Freight type is represented by a freight type <code>string</code>.</p>
+
+<p>Freight types are used to filter or retrieve items by the offered freight methods (shipping methods) 
+of a particular item.</p>
+<h3 id='supported-freight-types'>Supported Freight Types</h3>
+<ul>
+<li><code>AliExpress Standard Shipping</code></li>
+<li><code>China Post Ordinary Small Packet Plus</code></li>
+<li><code>China Post Registered Air Mail</code></li>
+<li><code>DHL</code></li>
+<li><code>ePacket</code></li>
+<li><code>EMS</code></li>
+<li><code>Fedex IP</code></li>
+<li><code>Seller&#39;s Shipping Method</code></li>
+<li><code>SunYou Economic Air Mail</code></li>
+<li><code>Yanwen Economic Air Mail</code></li>
+<li><code>UPS Express Saver</code></li>
+<li><code>UPS Expedited</code></li>
+</ul>
 <h2 id='mailingaddress'>MailingAddress</h2>
 <blockquote>
 <p>Example of a mailing address</p>
