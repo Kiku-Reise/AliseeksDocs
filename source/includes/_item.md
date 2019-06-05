@@ -537,7 +537,9 @@ POST /v1/products/shipping HTTP/1.1
 {
 	"productId": "32826897725",
 	"country": "US",
-	"quantity": 1
+	"sendGoodsCountry": "CN",
+  "currency": "USD"
+	"quantity": 1,
 }
 ```
 
@@ -604,7 +606,9 @@ Parameter | Type | Default | Description | Allowed Values
 --------- | ---- | ------- | ----------- | --------------
 productId | string | empty | The product ID to retrieve. |
 country | string | US | The country that the product will be shipped to. (See supported ship to countries below) |
+sendGoodsCountry | string | CN | The country which the product will be shipped from. |
 quantity | integer | 1 | The amount that will be shipped. |
+currency | string | USD | The currency that shipping prices will be retrieved in. [See supported realtime currencies.](#currency) |
 
 ### Supported Ship To Countries
 
