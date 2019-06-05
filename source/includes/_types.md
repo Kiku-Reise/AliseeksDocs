@@ -75,6 +75,36 @@ Only a small subset of the global locales can be used in the Aliseeks API.
 
 ar_SA, de_DE, en_US, es_ES, fr_FR, he_IL, ko_KR, pl_PL, pt_BR, ru_RU, tr_TR
 
+## Freight Types
+
+> Example of a freight type
+
+```json
+{
+  "freight": "ePacket"
+}
+```
+
+Freight type is represented by a freight type `string`.
+
+Freight types are used to filter or retrieve items by the offered freight methods (shipping methods) 
+of a particular item.
+
+### Supported Freight Types
+
+* `AliExpress Standard Shipping`
+* `China Post Ordinary Small Packet Plus`
+* `China Post Registered Air Mail`
+* `DHL`
+* `ePacket`
+* `EMS`
+* `Fedex IP`
+* `Seller's Shipping Method`
+* `SunYou Economic Air Mail`
+* `Yanwen Economic Air Mail`
+* `UPS Express Saver`
+* `UPS Expedited`
+
 ## MailingAddress
 
 > Example of a mailing address

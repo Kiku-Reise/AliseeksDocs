@@ -220,7 +220,7 @@ quantityRange | Range | null | A lot size (sold by quantity) to apply to matched
 priceRange | Range | null | A non-wholesale price filter to apply to matched items. | 
 unitPriceRange | Range | null | A wholesale price filter to apply to matched items. |
 orderRange | Range | null | A number of orders filter to apply to matched items. |
-freightTypes | string[] | null | Freight types filter to apply to matched items. You can use this filter to find items that ship with ePacket. | `ePacket` ... many more, exhaustive list coming soon.
+freightTypes | string[] | null | Freight types filter to apply to matched items. You can use this filter to find items that ship with a shipping method. | [See supported freight types.](#freight-types)
 sellers | integer[] | null | A seller filter to retrieve items that are sold by particular seller IDs. |
 storeNames | string[] | null | A list of store names to retrieve items that are sold by a particular store name. |
 skip | integer | 0 | The number of matched items to skip | [0 - 5000]
