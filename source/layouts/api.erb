@@ -33,7 +33,8 @@ under the License.
     <title><%= current_page.data.title || "API Documentation" %></title>
 
     <!-- Disable indexing -->
-    <meta name="robots" content="noindex">
+    <!-- Uncomment below to prevent indexing -->
+    <!-- <meta name="robots" content="noindex"> -->
 
     <style>
       <%= Rouge::Themes::MonokaiSublime.render(:scope => '.highlight') %>
