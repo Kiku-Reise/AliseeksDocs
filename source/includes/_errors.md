@@ -28,5 +28,5 @@ please retry your request and let us know if you see persistant problems.
 Errors can be read from the JSON body response of the API or can be read off of the headers:
 **x-error-code**, **x-error-detailed-message** .
 
-Again our contact is: **alex@aliseeks.com** . This API is not very mature yet
-and things may change or not work properly.
+**WARNING: This API is not very mature yet and things may change or not work properly. This API may cease to operate at
+any point in time without warning. You assume all risks associated with using this API.**
